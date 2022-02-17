@@ -10,6 +10,7 @@ public class Account {
 	String accountNumber = "";
 	String routingNumber = "";
 	String accountName = "";
+
 	boolean approved;
 	
 
@@ -33,6 +34,11 @@ public class Account {
 		this.UserID = userID;
 		accountType = type;
 		accountName = type + " account";
+		approved = false;
+	}
+	public Account(int userID)
+	{
+		this.UserID = userID;
 		approved = false;
 	}
 	public Account(int userID, Type type, String name)
@@ -68,6 +74,27 @@ public class Account {
 		accountType = type;
 		approved = true;
 	}
+	public Account(int UserID, String accountNumber, String routingNumber, BigDecimal amount, String name, int type)
+	{
+		this.UserID = UserID;
+		this.accountNumber = accountNumber;
+		this.routingNumber = routingNumber;
+		balance = amount;
+		accountName = name;
+		accountType = Type.values()[type];
+		approved = true;
+	}
+	public Account(int UserID, String accountNumber, String routingNumber, BigDecimal amount, String name, int type, int ID)
+	{
+		this.UserID = UserID;
+		this.accountNumber = accountNumber;
+		this.routingNumber = routingNumber;
+		balance = amount;
+		accountName = name;
+		accountType = Type.values()[type];
+		approved = true;
+		this.ID = ID;
+	}
 	// for errors form DB/dao
 	public Account(String error)
 	{
@@ -91,6 +118,12 @@ public class Account {
 		return balance;
 	}
 
+	public int getUserID() {
+		return UserID;
+	}
+	public void setUserID(int userID) {
+		UserID = userID;
+	}
 	public String getAccountNumber() {
 		return accountNumber;
 	}
@@ -111,6 +144,12 @@ public class Account {
 	}
 	public void setAccountType(Type accountType) {
 		this.accountType = accountType;
+	}
+	public String getAccountName() {
+		return accountName;
+	}
+	public void setAccountName(String accountName) {
+		this.accountName = accountName;
 	}
 	
 	

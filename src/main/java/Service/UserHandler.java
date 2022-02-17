@@ -1,4 +1,6 @@
 package Service;
+import java.util.LinkedList;
+
 import BasicClasses.*;
 import Dao.*;
 
@@ -13,7 +15,7 @@ public class UserHandler implements MultiLayorInteractable<User> {
 			DBUserHandler.add(RegisteredUser);
 			// for database
 			//return DBUserHandler.GetUser(RegisteredUser.getUser(), RegisteredUser.getPassword());
-			return RegisteredUser;
+			return get(RegisteredUser.getUser(),RegisteredUser.getPassword());
 		}
 		catch(Exception e) // returns previous user on DB fail
 		{
@@ -46,6 +48,20 @@ public class UserHandler implements MultiLayorInteractable<User> {
 	public String errorText() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+	public LinkedList<Customer> getCustomers()
+	{
+		return DBUserHandler.getCustomers();
+	}
+	public LinkedList<Customer> RegisterCustomers()
+	{
+		return DBUserHandler.RegesterCustomers();
+	}
+
+	public void setRegistration(LinkedList<Customer> customerRegistration) {
+		// TODO Auto-generated method stub
+		DBUserHandler.setRegistration(customerRegistration);
+		
 	}
 	
 	

@@ -1,18 +1,10 @@
 package Dao;
 
-public interface DBConnector<T> {
+public interface DBConnector {
 	
-	String ConnectionString = "WillInputLater";
-	
-	public void add(T item);
-	
-	public void update(T item);
-	
-	public void delete(int ID);
-	
-	public T get(int ID);
-	
-	public String errorText();
-	
+	static String ConnectionString = "jdbc:postgresql://localhost:5432/sample";
+	static String userName = "postgres";
+	static String password = "1234";
+
 	
 }

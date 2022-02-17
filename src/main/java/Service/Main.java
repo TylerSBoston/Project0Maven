@@ -1,5 +1,7 @@
 package Service;
 
+import java.util.LinkedList;
+
 import BasicClasses.*;
 import Presentation.*;
 
@@ -23,12 +25,26 @@ public class Main {
 			{
 				input = presenter.createOrLogin(loggedInUser);
 				loggedInUser = input.getUser();
-				if(input.getOutput() == Command.command.login)
+				if(input.getOutput() == Command.command.customerLogin)
 				{
 					loggedInUser = userHandler.get(loggedInUser.getUser(), loggedInUser.getPassword());
 					if(loggedInUser.getErrorText() != "")
 					{
 						input.setOutput(Command.command.none);
+						presenter.transactionstatus(loggedInUser.getErrorText());
+					}
+					else
+					{
+						presenter.setLoggedInUser(loggedInUser);
+					}
+				}
+				else if(input.getOutput() == Command.command.customerLogin)
+				{
+					loggedInUser = userHandler.get(loggedInUser.getUser(), loggedInUser.getPassword());
+					if(loggedInUser.getErrorText() != "")
+					{
+						input.setOutput(Command.command.none);
+						presenter.transactionstatus(loggedInUser.getErrorText());
 					}
 					else
 					{
@@ -40,14 +56,21 @@ public class Main {
 					loggedInUser = userHandler.add(loggedInUser);
 					presenter.setLoggedInUser(loggedInUser);
 				}
+				else if(input.getOutput() == Command.command.exit)
+				{
+					exit = false;
+					
+				}
 				
 			}
 			// Customer menu and options
-			else if(loggedInUser.getAccountType() == User.AccountType.Customer)
+			
+			else if(loggedInUser instanceof Customer)
 			{
 				//*****************************************************************
 				// Accept Tranfer code here*********************************************************************
 				//*****************************************************************
+				
 				input = presenter.customerInterface();
 				switch (input.getOutput())
 				{
@@ -57,6 +80,8 @@ public class Main {
 					break;
 				case getBankAccounts :
 						loggedInUser.setAccounts(accountHandler.getAccounts(loggedInUser.getUserID()));
+						presenter.setLoggedInUser(loggedInUser);
+						presenter.displayAccounts(loggedInUser.getAccounts());
 					break;
 					// no longer used/deprecated
 				case deposit :
@@ -68,15 +93,25 @@ public class Main {
 					if(input.getReturnObject() instanceof Account)
 						accountHandler.add((Account)input.getReturnObject());
 					break;
-				case transfer :
+				case getStatements :
+					presenter.displayTransactions(accountHandler.getTransactions(loggedInUser.getUserID()));
+				break;
+				case transferGetAccounts :
+					loggedInUser.setAccounts(accountHandler.getAccounts(loggedInUser.getUserID()));
+					presenter.setLoggedInUser(loggedInUser);
+					input = presenter.transfer();
 					if(input.getReturnObject() instanceof Transfer)
 					{
 						Transfer trans = (Transfer)input.getReturnObject();
 						accountHandler.transfer(trans.getAmount(),trans.getTargetRoutingNumber(), trans.getTargetAccountNumber(), trans.getOriginID());
 					}
-					break;
-				case getStatements :
 					
+				break;
+				case logoff :
+					input.setOutput(Command.command.none);
+					loggedInUser = new User();
+					presenter.setLoggedInUser(loggedInUser);
+				
 				break;
 				default:
 				
@@ -84,8 +119,25 @@ public class Main {
 				}
 			}
 			// Employee menu and options
-			else if(loggedInUser.getAccountType() == User.AccountType.Employee)
+			else if(loggedInUser instanceof Employee)
 			{
+				input = presenter.EmployeeInterface();
+				switch(input.getOutput())
+				{
+				case registerCustomer : 
+					userHandler.setRegistration(presenter.customerRegistration(userHandler.RegisterCustomers()));
+				break;
+				case viewCustomers  :
+					presenter.DisplayCustomers(userHandler.getCustomers());
+				break;
+				case logoff :
+					input.setOutput(Command.command.none);
+					loggedInUser = new User();
+					presenter.setLoggedInUser(loggedInUser);
+					break;
+				}
+				
+				
 				
 			}
 			// why isn't a user automaticly a customer? only other distinction is employee which would need an admin process to be created/aka not in this app

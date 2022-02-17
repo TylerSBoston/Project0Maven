@@ -19,8 +19,15 @@ public class Command {
 		deposit,
 		withdraw,
 		transfer,
-		getStatements
-		
+		getStatements,
+		registerCustomer,
+		viewAllAccounts,
+		getlogs,
+		viewCustomers,
+		employeeLogin,
+		customerLogin,
+		exit,
+		transferGetAccounts
 	}
 	int returnID = 0;
 	// the logged in user

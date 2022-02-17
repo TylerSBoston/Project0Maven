@@ -3,6 +3,7 @@ package Service;
 import java.math.BigDecimal;
 import java.rmi.AccessException;
 import java.util.HashSet;
+import java.util.LinkedList;
 
 import BasicClasses.*;
 import Dao.*;
@@ -17,7 +18,13 @@ public class AccountHandler implements MultiLayorInteractable<Account>{
 	public Account add(Account item) {
 		// TODO Auto-generated method stub
 		
-		DBAccountHandler.add(item);
+		if(item.getBalance().intValue() >= 0)
+		{
+			DBAccountHandler.add(item);
+		}
+		else {
+			TextPresenter.transactionstatus("Negative Balance Entered");
+		}
 		return item;
 	}
 	
@@ -42,11 +49,14 @@ public class AccountHandler implements MultiLayorInteractable<Account>{
 	@Override
 	public Account get(int ID) {
 		// TODO Auto-generated method stub
-		return null;
+		
+		
+		
+		return null; 
 	}
 	
-	public HashSet<Account> getAccounts(int UserID)
-	{
+	public LinkedList<Account> getAccounts(int UserID)
+	{	
 		return DBAccountHandler.getAccounts(UserID);
 	}
 	
@@ -54,28 +64,33 @@ public class AccountHandler implements MultiLayorInteractable<Account>{
 	{
 		return DBAccountHandler.getAccountStatements(ID);
 	}
-
+	
 	@Override
 	public String errorText() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	
-	public void transfer(BigDecimal amount, String routing, String account,int original)
+	public void transfer(BigDecimal amount, String routing, String account,int originalID)
 	{
 		try
 		{
-			if(amount.compareTo(BigDecimal.ZERO) == 1 && amount.compareTo(get(original).getBalance()) <= 0)
-				DBAccountHandler.Transfer(amount,routing,account,original);
+			if(amount.compareTo(BigDecimal.ZERO) == 1 && amount.compareTo(DBAccountHandler.getBalance(originalID)) < 1)
+				DBAccountHandler.Transfer(amount,routing,account,originalID);
 			else
 				TextPresenter.transactionstatus("Invalid amount");
 		}
 		catch(Exception e)
 		{
 			TextPresenter.transactionstatus(false);
+			e.printStackTrace();
 		}
 		
 		
+	}
+	public LinkedList<TransactionView> getTransactions(int ID)
+	{
+		return DBAccountHandler.getTransfers(ID);
 	}
 
 }

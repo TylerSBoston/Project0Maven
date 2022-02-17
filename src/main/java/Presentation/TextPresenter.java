@@ -20,18 +20,33 @@ public class TextPresenter {
 		}
 		while(true)
 		{
-			System.out.println("Enter 1 to log in, Enter 2 to create account");
+			System.out.println(	"1.) to create account\n"
+							+	"2.) for Customer Login\n"
+							+ 	"3.) for Employee Login\n"
+							+ 	"0.) Exit");
 			returnValue = InputVerifier.verifyInt(scanner);
-			if(returnValue == 1)
+			if(returnValue == 2)
 			{
-				output.setUser(login());
-				output.setOutput(Command.command.login);
+				output.setUser(customerLogin());
+				output.setOutput(Command.command.customerLogin);
 				return output;
 			}
-			else if(returnValue == 2)
+			else if(returnValue == 1)
 			{
 				output.setUser(create());
 				output.setOutput(Command.command.createUserAccount);
+				return output;
+			}
+			else if(returnValue == 3)
+			{
+				output.setUser(employeeLogin());
+				output.setOutput(Command.command.employeeLogin);
+				return output;
+			}
+			else if(returnValue == 0)
+			{
+				System.out.println("Exiting");
+				output.setOutput(Command.command.exit);
 				return output;
 			}
 			else
@@ -40,15 +55,29 @@ public class TextPresenter {
 			}
 		}
 	}
-	private User login()
+	
+	
+	
+	private User customerLogin()
 	{
 		
-		System.out.print("Enter user name: ");
+		System.out.print("Enter your user name: ");
 		String user = scanner.nextLine().trim();
 		System.out.print("Enter password: ");
 		String password = scanner.nextLine().trim();
 		
-		return new User(user,password); 
+		return new Customer(user,password); 
+		
+	}
+	private User employeeLogin()
+	{
+		
+		System.out.print("Enter your user name: ");
+		String user = scanner.nextLine().trim();
+		System.out.print("Enter password: ");
+		String password = scanner.nextLine().trim();
+		
+		return new Employee(user,password); 
 		
 	}
 	private User create()
@@ -68,9 +97,15 @@ public class TextPresenter {
 			pass2 = scanner.nextLine();
 		}while(!pass1.equals(pass2));
 		// this would normally have extra user info but just name for now
-		System.out.println("Enter your Name");
-		String name = scanner.nextLine();
-		return new User(userName,pass1,name);
+		System.out.println("Enter your firstName");
+		String firstName = scanner.nextLine();
+		System.out.println("Enter your LastName");
+		String lastName = scanner.nextLine();
+		System.out.println("Enter your Email");
+		String email = scanner.nextLine();
+		System.out.println("Enter your Phone Number");
+		String phone = scanner.nextLine();		
+		return new User(userName,pass1,firstName,lastName,email,phone);
 	}
 	public Command customerInterface()
 	{
@@ -80,8 +115,8 @@ public class TextPresenter {
 		while(true)
 		{
 			System.out.println("Select Option: \n"
-							+ "1.) Create Account \n"
-							+ "2.) View Account(s) \n"
+							+ "1.) Create bank Account \n"
+							+ "2.) View bank Account(s) \n"
 							+ "3.) get AccountStatement(s) \n"
 							+ "4.) Transfer \n"
 							+ "0.) Log out");
@@ -103,8 +138,7 @@ public class TextPresenter {
             	output.setReturnObject(getStatements());
             	return output;
             case 4:  
-            	output.setOutput(Command.command.transfer);
-            	output.setReturnObject(transfer());
+            	output.setOutput(Command.command.transferGetAccounts);
             	return output;
             case 0: 
             	output.setOutput(Command.command.logoff);
@@ -195,27 +229,36 @@ public class TextPresenter {
 		
 	}
 	
-	private Transfer transfer()
+	public Command transfer()
 	{
-		System.out.println("transfer Amount: ");
-		double input = scanner.nextDouble();
-		BigDecimal transfer = new BigDecimal(input);
-		transfer.setScale(2,RoundingMode.CEILING);
+		Command com = new Command();
+		com.setUser(loggedInUser);
+		int accountNumber = 0;
 		if(loggedInUser.getAccounts().size() >= 2)
 		{
-			System.out.println("Are you tranfering to another account of yours: Y/N");
-			String makeName = scanner.nextLine();
-			//********************************************build once DB is up********************************
-			return null;
+			System.out.println("select account to transfer from");
+			for(int spot = 0; spot<loggedInUser.getAccounts().size(); spot++)
+			{
+				System.out.println((spot+1) + ".)" + loggedInUser.getAccounts().get(spot).getAccountName());
+			}
+			System.out.println();
+			accountNumber = InputVerifier.verifyInt(scanner) - 1;
+			scanner.nextLine();
 		}
 		System.out.println("Transferee Routing Number: ");
 		String routingNumb = scanner.nextLine().trim();
 		System.out.println("Transferee Account Number: ");
 		String accountNumb = scanner.nextLine().trim();
-		Transfer output = new Transfer(transfer,routingNumb,accountNumb,loggedInUser.getUserID());
-		
+		System.out.println("transfer Amount: ");
+		double input = scanner.nextDouble();
+		scanner.nextLine();
+		BigDecimal transfer = new BigDecimal(input);
+		transfer.setScale(2,RoundingMode.CEILING);
+		Transfer out = new Transfer(transfer,routingNumb,accountNumb,loggedInUser.getAccounts().get(accountNumber).getID());
+		com.setReturnObject(out);
+		com.setOutput(Command.command.transfer);
 		System.out.println("");
-		return output;
+		return com;
 	}
 	
 	//temp return value
@@ -235,31 +278,16 @@ public class TextPresenter {
 		while(true)
 		{
 			System.out.println("Select Option: \n"
-							+ "1.) Approve Accounts \n"
-							+ "2.) View Account(s) \n"
-							+ "3.) View Statement(s) \n"
-							+ "4.) Transfer \n"
+							+ "1.) Register Customr \n"
+							+ "2.) View Customer's \n"
 							+ "0.) Log out");
 			input = InputVerifier.verifyInt(scanner);
 	        switch (input) {
             case 1: 
-            	output.setOutput(Command.command.createBankAccount);
-            	output.setReturnObject(createBankAccount());
-            	if(output.getReturnObject() != null)
-            	{
-            		return output;
-            	}
-                     break;
+            	output.setOutput(Command.command.registerCustomer);
+            	return output;
             case 2: 
-            	output.setOutput(Command.command.getBankAccounts);
-            	return output;
-            case 3:  
-            	output.setOutput(Command.command.getStatements);
-            	output.setReturnObject(getStatements());
-            	return output;
-            case 4:  
-            	output.setOutput(Command.command.transfer);
-            	output.setReturnObject(transfer());
+            	output.setOutput(Command.command.viewCustomers);
             	return output;
             case 0: 
             	output.setOutput(Command.command.logoff);
@@ -293,7 +321,113 @@ public class TextPresenter {
 	}
 	public static void transactionstatus(String errorMessage)
 	{
-		System.out.println("Transaction Failed: " + errorMessage);
+		System.out.println(errorMessage);
+	}
+
+
+
+	public void displayAccounts(LinkedList<Account> accounts) 
+	{
+		System.out.println();
+		if(accounts.size() == 0)
+		{
+			System.out.println("You do not have any accounts");
+		}
+		for(Account a : accounts)
+		{
+			System.out.println("******************************************");
+			System.out.println("Account: " + a.getAccountName());
+			System.out.println("Balance: " + a.getBalance().toString());
+			System.out.println("Routing number: " + a.getRoutingNumber());
+			System.out.println("Routing number: " + a.getAccountNumber());
+			System.out.println("Account type: " + a.getAccountType());
+			System.out.println("******************************************");	
+		}
+		
+		
+		
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
+	public void displayTransactions(LinkedList<TransactionView> transactions) {
+		// TODO Auto-generated method stub
+		System.out.println();
+		System.out.println("******************************************");
+		if(transactions.size() == 0)
+		{
+			System.out.println("You do not have any Trajsactions");
+		}
+		for(TransactionView t : transactions)
+		{
+			
+
+				System.out.println("From:  "+t.getSenderName() + " , " + t.getSenderAccountName() + "    To: "+ t.getRecieverName() +" , "+ t.getRecieverAccountName() + "        " + t.getAmount().toString()+  "     " +t.getDate());
+
+
+		}
+		
+		
+		System.out.println("******************************************");
+		
+	}
+
+
+
+	public LinkedList<Customer> customerRegistration(LinkedList<Customer> registerCustomers) {
+		// TODO Auto-generated method stub
+		System.out.println("Listing unregistered Users");
+		for(Customer c : registerCustomers)
+		{
+			System.out.println();
+			System.out.println("Name: " +c.getFirstName() + " " + c.getLastName());
+			System.out.println("Email: " + c.getEmail());
+			System.out.println("Phone: " + c.getPhone());
+			System.out.println("\nApprove? Y/N");
+			boolean pass = false;
+			String nextLine;
+			while(pass == false)
+			{
+				nextLine = scanner.nextLine();
+				if(nextLine.equals("Y"))
+				{
+					c.setActive(1);
+					pass = true;
+				}
+				else if(nextLine.equals("N"))
+				{
+					c.setActive(-1);
+					pass = true;
+				}
+				else
+				{
+					System.out.println("Enter a valid input");
+				}
+			}
+		}
+		return registerCustomers;
+	}
+
+
+
+	public void DisplayCustomers(LinkedList<Customer> customers) {
+		// TODO Auto-generated method stub
+		System.out.println("**********************************");
+		for(Customer c : customers)
+		{
+			System.out.println();
+			System.out.println("Name: " +c.getFirstName() + " " + c.getLastName());
+			System.out.println("Email: " + c.getEmail());
+			System.out.println("Phone: " + c.getPhone());
+			System.out.println("**********************************");
+
+		}
+		
+		
+		
+		
 	}
 	
 

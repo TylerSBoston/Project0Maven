@@ -13,13 +13,16 @@ public class User {
 		User
 	}
 	// to keep track of state of user, Might not be needed with command
-	HashSet<Account> accounts = new HashSet<Account>();
+	LinkedList<Account> accounts = new LinkedList<Account>();
 	// password only used on creating accounts
 	private String password = "";
 	private String user = "";
 	private String errorText = "";
 	private int userID = 0;
-	private String name = "";
+	private String firstName = "";
+	private String lastName = "";
+	private String email = "";
+	private String phone = "";
 	private AccountType accountType;
 	
 	// for new account if its an employee
@@ -28,20 +31,21 @@ public class User {
 		
 	}
 	
-	public User(String user, String pass,  String  name, AccountType type)
+	public User(String user, String pass,  String  firstName, String lastName,String email, String phone, AccountType type)
 	{
 		this.user = user;
 		password = pass;
 		accountType = type;
-		this.name = name;
+		nameInfo(firstName,lastName,email,phone);
+		
 	}
 	// for new account
-	public User(String user, String pass,  String  name)
+	public User(String user, String pass,  String  firstName, String lastName,String email, String phone)
 	{
 		this.user = user;
 		password = pass;
 		accountType = AccountType.Customer;
-		this.name = name;
+		nameInfo(firstName,lastName,email,phone);
 	}
 	
 	// for login
@@ -52,21 +56,30 @@ public class User {
 	}
 	
 	//DB pulled Account
-	public User(String name, int ID, AccountType type)
+	public User(String  firstName, String lastName,String email, String phone, int ID, AccountType type)
 	{
-		this.name = name;
+		nameInfo(firstName,lastName,email,phone);
 		userID = ID;
 		accountType = type;
 	}
 	//for creating new accounts, this will be removed and done on the DB later
-	public User(String user, String pass, String name, int ID, AccountType type)
+	public User(String user, String pass, String  firstName, String lastName,String email, String phone, int ID, AccountType type)
 	{
 		this.user = user;
 		password = pass;
 		accountType = type;
-		this.name = name;
+		nameInfo(firstName,lastName,email,phone);
 		userID = ID;
 	}
+	
+	private void nameInfo(String  firstName, String lastName,String email, String phone)
+	{
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.email = email;
+		this.phone = phone;
+	}
+	
 
 	public String getPassword() {
 		return password;
@@ -83,13 +96,36 @@ public class User {
 	public void setUser(String user) {
 		this.user = user;
 	}
-
-	public String getName() {
-		return name;
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
+	}
+
+	public String getLastName() {
+		return lastName;
+	}
+
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
 	}
 
 	public AccountType getAccountType() {
@@ -106,11 +142,11 @@ public class User {
 	public void setErrorText(String errorText) {
 		this.errorText = errorText;
 	}
-	public HashSet<Account> getAccounts() {
+	public LinkedList<Account> getAccounts() {
 		return accounts;
 	}
 
-	public void setAccounts(HashSet<Account> accounts) {
+	public void setAccounts(LinkedList<Account> accounts) {
 		this.accounts = accounts;
 	}
 
