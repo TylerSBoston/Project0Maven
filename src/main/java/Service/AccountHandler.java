@@ -8,11 +8,11 @@ import java.util.LinkedList;
 import BasicClasses.*;
 import Dao.*;
 import Presentation.TextPresenter;
-
+import org.apache.logging.log4j.*;
 public class AccountHandler implements MultiLayorInteractable<Account>{
 
 	
-	
+	private final Logger log = LogManager.getLogger(this.getClass());
 	// adds to be enabled
 	@Override
 	public Account add(Account item) {
@@ -58,11 +58,6 @@ public class AccountHandler implements MultiLayorInteractable<Account>{
 	public LinkedList<Account> getAccounts(int UserID)
 	{	
 		return DBAccountHandler.getAccounts(UserID);
-	}
-	
-	public String[] getAccountStatements(int ID)
-	{
-		return DBAccountHandler.getAccountStatements(ID);
 	}
 	
 	@Override

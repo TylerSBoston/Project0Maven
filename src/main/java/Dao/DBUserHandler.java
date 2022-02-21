@@ -5,11 +5,11 @@ import java.util.LinkedList;
 import org.postgresql.util.*;
 
 import BasicClasses.*;
-
+import org.apache.logging.log4j.*;
 // this is what i want to do first but requires DB and logging stuff started...
 
 public class DBUserHandler {
-	
+	private final static Logger log = LogManager.getLogger(DBUserHandler.class);
 
 	
 	static {
@@ -24,23 +24,25 @@ public class DBUserHandler {
 	public static void add(User newUser)
 	{
 		// waiting for DB stuff
-		
+		log.info("in add User Dao Layer");
 		try {
 			
+			String query = "call \"AddCustomer\"(?,?,?,?,?,?);";
 			
-			Statement st = DBConnection.getConnection().createStatement();
-			String query = "call \"AddCustomer\"('"+ newUser.getFirstName() + "','"
-			+ newUser.getLastName() + "','"
-			+ newUser.getEmail() + "','"
-			+ newUser.getPhone() + "','" 
-			+ newUser.getUser() + "','"
-			+ newUser.getPassword() + "' ); ";
+			PreparedStatement st = DBConnection.getConnection().prepareStatement(query);
+			st.setString(1, newUser.getFirstName());
+			st.setString(2, newUser.getLastName());
+			st.setString(3, newUser.getEmail());
+			st.setString(4, newUser.getPhone());
+			st.setString(5, newUser.getUser());
+			st.setString(6, newUser.getPassword());
 			
-			st.execute(query);
+			
+			st.execute();
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.warn("Dao layer, Failed to add user" + e.getMessage());
 		} 
 	}
 
@@ -71,6 +73,7 @@ public class DBUserHandler {
 	// get user for logging in
 	public static User GetUser(String user, String passWord)
 	{
+		log.info("in GetUser Dao Layer");
 		Customer login = new Customer();	
 		try {	
 			String query = "call \"CustomerLogin\"(?,?,?,?);";
@@ -100,15 +103,17 @@ public class DBUserHandler {
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.info("GetUser Failed: " + e.getMessage());
 		} 
 		return login;
 	}
 	
-	public static LinkedList<Customer> RegesterCustomers()
+	public static LinkedList<Customer> RegisterCustomers()
 	{
+		log.info("in Regester Customers Dao Layer");
 		LinkedList<Customer> customers = new LinkedList<Customer>();
 		
+		// gets a list of unregistered customers to register
 		String query = "select * from \"Customers\" inner join \"Users\" on \"Customers\".\"userID\" = \"Users\".\"ID\" where \"Customers\".active = 0 ;";
 		try {
 			Statement st = DBConnection.getConnection().createStatement();
@@ -126,7 +131,7 @@ public class DBUserHandler {
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.warn("Register Customers failed: " + e.getMessage());
 		}
 		
 		
@@ -134,6 +139,7 @@ public class DBUserHandler {
 	}
 	public static LinkedList<Customer> getCustomers()
 	{
+		log.info("in getCustomers Dao Layer");
 		LinkedList<Customer> customers = new LinkedList<Customer>();
 		
 		String query = "select * from \"Customers\" inner join \"Users\" on \"Customers\".\"userID\" = \"Users\".\"ID\"";
@@ -154,7 +160,7 @@ public class DBUserHandler {
 			}
 		}catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.warn("Get Customers failed: " + e.getMessage());
 		}
 		
 		
@@ -164,6 +170,7 @@ public class DBUserHandler {
 
 	public static void setRegistration(LinkedList<Customer> customerRegistration) {
 		// TODO Auto-generated method stub
+		log.info("in Customer Registration Dao Layer");
 		String query = "call set_registration(?,?);";
 		try {
 			PreparedStatement st = DBConnection.getConnection().prepareStatement(query);
@@ -178,7 +185,7 @@ public class DBUserHandler {
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.warn("Failed to Regester Customer: " + e.getMessage());
 		}
 		
 	}

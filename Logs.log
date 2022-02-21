@@ -1,0 +1,73 @@
+2022-02-18 10:55:58 INFO  TextPresenter:18 - In login Page
+2022-02-18 10:56:03 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 10:56:04 INFO  TextPresenter:326 - In display accounts Page
+2022-02-18 10:56:04 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 10:56:05 INFO  TextPresenter:353 - In display transactions Page
+2022-02-18 10:56:05 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 10:56:07 INFO  TextPresenter:18 - In login Page
+2022-02-18 12:38:56 INFO  TextPresenter:18 - In login page
+2022-02-18 12:38:58 INFO  TextPresenter:87 - In create user Page
+2022-02-18 12:39:12 INFO  UserHandler:14 - in add User
+2022-02-18 12:39:12 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-18 12:39:12 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-18 12:39:12 INFO  UserHandler:46 - in get user service layer
+2022-02-18 12:39:12 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 12:39:16 INFO  TextPresenter:18 - In login page
+2022-02-18 12:39:17 INFO  TextPresenter:87 - In create user Page
+2022-02-18 12:39:31 INFO  UserHandler:14 - in add User
+2022-02-18 12:39:31 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-18 12:39:31 INFO  UserHandler:46 - in get user service layer
+2022-02-18 12:39:31 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 12:40:10 INFO  TextPresenter:18 - In login page
+2022-02-18 14:13:41 INFO  TextPresenter:18 - In login page
+2022-02-18 14:13:49 INFO  UserHandler:46 - in get user service layer
+2022-02-18 14:13:50 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-18 14:13:50 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-18 14:13:50 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 14:13:51 INFO  TextPresenter:159 - In create Bank Account
+2022-02-18 14:14:10 INFO  DBAccountHandler:24 -  in add Account Dao
+2022-02-18 14:14:10 WARN  DBAccountHandler:45 - Failed to create account [Ljava.lang.StackTraceElement;@5f6722d3
+2022-02-18 14:14:10 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 14:14:13 INFO  DBAccountHandler:78 -  in getAccounts Service Layer
+2022-02-18 14:14:13 INFO  TextPresenter:326 - In display accounts Page
+2022-02-18 14:14:13 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 14:14:24 INFO  TextPresenter:159 - In create Bank Account
+2022-02-18 14:14:32 INFO  DBAccountHandler:24 -  in add Account Dao
+2022-02-18 14:14:32 WARN  DBAccountHandler:45 - Failed to create account [Ljava.lang.StackTraceElement;@51972dc7
+2022-02-18 14:14:32 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 14:14:33 INFO  DBAccountHandler:78 -  in getAccounts Service Layer
+2022-02-18 14:14:33 INFO  TextPresenter:326 - In display accounts Page
+2022-02-18 14:14:33 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 14:14:40 INFO  TextPresenter:18 - In login page
+2022-02-18 14:17:49 INFO  TextPresenter:18 - In login page
+2022-02-18 14:17:53 INFO  UserHandler:46 - in get user service layer
+2022-02-18 14:17:53 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-18 14:17:53 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-18 14:17:53 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 14:17:55 INFO  TextPresenter:159 - In create Bank Account
+2022-02-18 14:18:04 INFO  DBAccountHandler:24 -  in add Account Dao
+2022-02-18 14:18:04 WARN  DBAccountHandler:45 - Failed to create account Can't use query methods that take a query string on a PreparedStatement.
+2022-02-18 14:18:04 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 14:18:07 INFO  DBAccountHandler:78 -  in getAccounts Service Layer
+2022-02-18 14:18:07 INFO  TextPresenter:326 - In display accounts Page
+2022-02-18 14:18:07 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 14:18:49 INFO  TextPresenter:18 - In login page
+2022-02-18 14:18:52 INFO  UserHandler:46 - in get user service layer
+2022-02-18 14:18:52 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-18 14:18:52 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-18 14:18:53 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 14:18:54 INFO  TextPresenter:159 - In create Bank Account
+2022-02-18 14:19:05 INFO  DBAccountHandler:24 -  in add Account Dao
+2022-02-18 14:19:05 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 14:19:06 INFO  DBAccountHandler:161 -  in getTransfers Dao
+2022-02-18 14:19:06 INFO  TextPresenter:353 - In display transactions Page
+2022-02-18 14:19:06 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 14:19:09 INFO  DBAccountHandler:78 -  in getAccounts Service Layer
+2022-02-18 14:19:09 INFO  TextPresenter:326 - In display accounts Page
+2022-02-18 14:19:09 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 14:19:22 INFO  TextPresenter:159 - In create Bank Account
+2022-02-18 14:19:27 INFO  DBAccountHandler:24 -  in add Account Dao
+2022-02-18 14:19:27 INFO  TextPresenter:115 - In customer interface Page
+2022-02-18 14:19:30 INFO  DBAccountHandler:78 -  in getAccounts Service Layer
+2022-02-18 14:19:30 INFO  TextPresenter:326 - In display accounts Page
+2022-02-18 14:19:30 INFO  TextPresenter:115 - In customer interface Page

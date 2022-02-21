@@ -8,9 +8,9 @@ import java.util.LinkedList;
 import org.postgresql.util.PSQLException;
 
 import BasicClasses.*;
-
+import org.apache.logging.log4j.*;
 public class DBAccountHandler {
-
+	private final static Logger log = LogManager.getLogger(DBAccountHandler.class);
 	static {
 		try {
 			Class.forName("org.postgresql.Driver");
@@ -21,23 +21,28 @@ public class DBAccountHandler {
 	
 	public static void add(Account newAccount)
 	{
-		
+		log.info(" in add Account Dao");
 		
 		/// REplace with prepared statement later***************************************
 		try {
-			Statement st = DBConnection.getConnection().createStatement();
-			String query =  "call \"createAccount\"(" +newAccount.getUserID() + 
-							"," + newAccount.getAccountType().ordinal() +
-							"," + newAccount.getBalance() + "" +
-							",'" + newAccount.getAccountName() + "');";
 			
-			st.execute(query);
+			String query =  "call \"createAccount\"(?,?,?,?);";
+			
+			PreparedStatement st = DBConnection.getConnection().prepareStatement(query);
+			st.setInt(1, newAccount.getUserID());
+			st.setInt(2, newAccount.getAccountType().ordinal());
+			st.setBigDecimal(3, newAccount.getBalance());
+			st.setString(4,newAccount.getAccountName());
+			
+			
+			
+			st.execute();
 			
 			
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.warn("Failed to create account " + e.getMessage());
 		} 
 
 		// waiting for DB stuff
@@ -70,6 +75,7 @@ public class DBAccountHandler {
 	// needs user ID
 	public static LinkedList<Account> getAccounts(int userID)
 	{
+		log.info(" in getAccounts Service Layer");
 		LinkedList<Account> accounts = new LinkedList<Account>();
 		
 		String query =  "select \"balance\",\"accountName\",\"routingNumber\",\"accountNumber\",\"accountTypeID\",\"ID\" "
@@ -99,19 +105,14 @@ public class DBAccountHandler {
 		}
 		catch(Exception e) 
 		{
-			e.printStackTrace();
+			log.warn("Failed to Get accounts " + e.getMessage());
 		}
 		return accounts;
 	}
 	
-	public static String[] getAccountStatements(int ID)
-	{
-		return null;
-	}
-	
 	public static void Transfer(BigDecimal amount, String routing, String account, int origin)
 	{
-		
+		log.info(" in Transfer Dao");
 		try {
 			String query = "call \"addtransaction\" (?,?,?,?);";
 			
@@ -123,11 +124,12 @@ public class DBAccountHandler {
 			st.execute();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.warn("Transfer Failed" + e.getMessage());
 		}	
 	}
 	public static BigDecimal getBalance(int ID)
 	{
+		log.info(" in getBalance Dao");
 		try {
 			String query = "call \"getBalance\" (?,?);";
 			CallableStatement st =  DBConnection.getConnection().prepareCall(query);
@@ -149,13 +151,14 @@ public class DBAccountHandler {
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.warn("Failed to get balance " + e.getMessage());
 		}
 		return BigDecimal.ZERO;
 	}
 	
 	public static LinkedList<TransactionView> getTransfers(int ID)
 	{
+		log.info(" in getTransfers Dao");
 		LinkedList<TransactionView> transactions = new LinkedList<TransactionView>();
 		String query = "";
 		try {
@@ -182,7 +185,7 @@ public class DBAccountHandler {
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			log.warn("Failed to get transfers " + e.getMessage());
 		}
 
 		

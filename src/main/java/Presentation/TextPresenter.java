@@ -2,6 +2,7 @@ package Presentation;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 import java.util.*;
+import org.apache.logging.log4j.*;
 
 import BasicClasses.*;
 
@@ -10,9 +11,11 @@ public class TextPresenter {
 	private static Scanner scanner = new Scanner(System.in);
 	private User loggedInUser;
 	private Command output = new Command();
+	private final Logger log = LogManager.getLogger(this.getClass());
 	
 	public Command createOrLogin(User user)
 	{
+		log.info("In login page");
 		int returnValue = 0;
 		if(!user.getErrorText().equals(""))
 		{
@@ -60,7 +63,6 @@ public class TextPresenter {
 	
 	private User customerLogin()
 	{
-		
 		System.out.print("Enter your user name: ");
 		String user = scanner.nextLine().trim();
 		System.out.print("Enter password: ");
@@ -82,6 +84,7 @@ public class TextPresenter {
 	}
 	private User create()
 	{
+		log.info("In create user Page");
 		System.out.println("Enter a user Name: ");
 		String userName = scanner.nextLine().trim();
 		String pass1 = "";
@@ -109,8 +112,8 @@ public class TextPresenter {
 	}
 	public Command customerInterface()
 	{
+		log.info("In customer interface Page");
 		int input = -1;
-		
 		//exits by return
 		while(true)
 		{
@@ -135,7 +138,6 @@ public class TextPresenter {
             	return output;
             case 3:  
             	output.setOutput(Command.command.getStatements);
-            	output.setReturnObject(getStatements());
             	return output;
             case 4:  
             	output.setOutput(Command.command.transferGetAccounts);
@@ -154,6 +156,7 @@ public class TextPresenter {
 	
 	private Account createBankAccount()
 	{
+		log.info("In create Bank Account");
 		int input;
 		String name = "";
 		boolean pass = false;
@@ -231,6 +234,7 @@ public class TextPresenter {
 	
 	public Command transfer()
 	{
+		log.info("In transfer");
 		Command com = new Command();
 		com.setUser(loggedInUser);
 		int accountNumber = 0;
@@ -260,20 +264,11 @@ public class TextPresenter {
 		System.out.println("");
 		return com;
 	}
-	
-	//temp return value
-	private Integer getStatements()
-	{
-		
-		
-		return 0;
-	}
-	
 	public Command EmployeeInterface()
 	{
 		int input = -1;
 
-		
+		log.info("In employee interface Page");
 		//Currently Customer
 		while(true)
 		{
@@ -328,6 +323,7 @@ public class TextPresenter {
 
 	public void displayAccounts(LinkedList<Account> accounts) 
 	{
+		log.info("In display accounts Page");
 		System.out.println();
 		if(accounts.size() == 0)
 		{
@@ -354,6 +350,7 @@ public class TextPresenter {
 
 	public void displayTransactions(LinkedList<TransactionView> transactions) {
 		// TODO Auto-generated method stub
+		log.info("In display transactions Page");
 		System.out.println();
 		System.out.println("******************************************");
 		if(transactions.size() == 0)
@@ -361,15 +358,9 @@ public class TextPresenter {
 			System.out.println("You do not have any Trajsactions");
 		}
 		for(TransactionView t : transactions)
-		{
-			
-
-				System.out.println("From:  "+t.getSenderName() + " , " + t.getSenderAccountName() + "    To: "+ t.getRecieverName() +" , "+ t.getRecieverAccountName() + "        " + t.getAmount().toString()+  "     " +t.getDate());
-
-
+		{	
+			System.out.println("From:  "+t.getSenderName() + " , " + t.getSenderAccountName() + "    To: "+ t.getRecieverName() +" , "+ t.getRecieverAccountName() + "        " + t.getAmount().toString()+  "     " +t.getDate());
 		}
-		
-		
 		System.out.println("******************************************");
 		
 	}
@@ -378,6 +369,7 @@ public class TextPresenter {
 
 	public LinkedList<Customer> customerRegistration(LinkedList<Customer> registerCustomers) {
 		// TODO Auto-generated method stub
+		log.info("In customer registration Page");
 		System.out.println("Listing unregistered Users");
 		for(Customer c : registerCustomers)
 		{
@@ -414,6 +406,7 @@ public class TextPresenter {
 
 	public void DisplayCustomers(LinkedList<Customer> customers) {
 		// TODO Auto-generated method stub
+		log.info("In display Page");
 		System.out.println("**********************************");
 		for(Customer c : customers)
 		{

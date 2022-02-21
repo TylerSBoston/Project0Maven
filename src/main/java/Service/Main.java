@@ -3,11 +3,13 @@ package Service;
 import java.util.LinkedList;
 
 import BasicClasses.*;
+import Dao.DBConnection;
 import Presentation.*;
-
+import org.apache.logging.log4j.*;
 // main in service as presentation is assumed to be the webpage/website in a normal application
 public class Main {
 
+	private final Logger log = LogManager.getLogger(this.getClass());
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		TextPresenter presenter = new TextPresenter();
@@ -58,6 +60,7 @@ public class Main {
 				}
 				else if(input.getOutput() == Command.command.exit)
 				{
+					DBConnection.closeConnection();
 					exit = false;
 					
 				}
@@ -140,6 +143,7 @@ public class Main {
 				
 				
 			}
+			//
 			// why isn't a user automaticly a customer? only other distinction is employee which would need an admin process to be created/aka not in this app
 			else if(loggedInUser.getAccountType() == User.AccountType.User)
 			{
