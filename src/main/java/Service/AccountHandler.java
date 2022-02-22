@@ -20,12 +20,17 @@ public class AccountHandler implements MultiLayorInteractable<Account>{
 		
 		if(item.getBalance().intValue() >= 0)
 		{
-			DBAccountHandler.add(item);
+			try {
+				DBAccountHandler.add(item);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				log.warn("Failed to add Account" + e.getMessage());
+			}
 		}
 		else {
-			TextPresenter.transactionstatus("Negative Balance Entered");
+			TextPresenter.serviceMessage("Negative Balance Entered");
 		}
-		return item;
+		return null;
 	}
 	
 	// enables account
@@ -55,9 +60,16 @@ public class AccountHandler implements MultiLayorInteractable<Account>{
 		return null; 
 	}
 	
-	public LinkedList<Account> getAccounts(int UserID)
+	public LinkedList<Account> getAccounts(int UserID) 
 	{	
-		return DBAccountHandler.getAccounts(UserID);
+
+		try {
+			return DBAccountHandler.getAccounts(UserID);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			log.warn("Failed in getAccounts" + e.getMessage());
+		}
+		return new LinkedList<Account>();
 	}
 	
 	@Override
@@ -69,23 +81,39 @@ public class AccountHandler implements MultiLayorInteractable<Account>{
 	public void transfer(BigDecimal amount, String routing, String account,int originalID)
 	{
 		try
-		{
-			if(amount.compareTo(BigDecimal.ZERO) == 1 && amount.compareTo(DBAccountHandler.getBalance(originalID)) < 1)
+		{	
+			if(ValidateTransfer(amount,DBAccountHandler.getBalance(originalID)))
 				DBAccountHandler.Transfer(amount,routing,account,originalID);
 			else
-				TextPresenter.transactionstatus("Invalid amount");
+				TextPresenter.serviceMessage("Invalid amount");
 		}
 		catch(Exception e)
 		{
 			TextPresenter.transactionstatus(false);
-			e.printStackTrace();
+			log.warn("Transfer Failed " + e.getMessage());
 		}
 		
 		
 	}
+	
+	// this is here so I have something that can be unit tested that isn't dependent on user input in the test method or on the DB
+	public boolean ValidateTransfer(BigDecimal amount, BigDecimal currentAmount)
+	{
+		if(amount.compareTo(BigDecimal.ZERO) == 1 &&  amount.compareTo(currentAmount) < 1 )
+		{
+			return true;
+		}
+		return false;
+	}
+	
 	public LinkedList<TransactionView> getTransactions(int ID)
 	{
-		return DBAccountHandler.getTransfers(ID);
+		try {
+			return DBAccountHandler.getTransfers(ID);
+		} catch (Exception e) {
+			log.warn("getTransaction Failed " + e.getMessage());
+		}
+		return new LinkedList<TransactionView>();
 	}
 
 }

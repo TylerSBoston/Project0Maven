@@ -71,123 +71,130 @@ public class DBUserHandler {
 	}
 	
 	// get user for logging in
-	public static User GetUser(String user, String passWord)
+	public static User GetUser(String user, String passWord) throws Exception
 	{
 		log.info("in GetUser Dao Layer");
 		Customer login = new Customer();	
-		try {	
-			String query = "call \"CustomerLogin\"(?,?,?,?);";
-			CallableStatement st =  DBConnection.getConnection().prepareCall(query);
-			
-			st.setString(1, user);
-			st.setString(2, passWord);
-			st.setInt(3, 0);
-			st.setInt(4, 0);
-			ResultSet results = null;
-			try {
-				results = st.executeQuery();
-			}
-			catch(PSQLException e){
-				
-			}
-			if(results != null)
-			{
-				results.next();
-				login.setUser(results.getString(1));
-				login.setUserID(results.getInt("customer_id"));
-				login.setActive(results.getInt("status"));
-			}
-			else
-			{
-				login.setErrorText("Invalid Username password combination");
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			log.info("GetUser Failed: " + e.getMessage());
-		} 
+	
+		String query = "call \"CustomerLogin\"(?,?,?,?);";
+		CallableStatement st =  DBConnection.getConnection().prepareCall(query);
+		
+		st.setString(1, user);
+		st.setString(2, passWord);
+		st.setInt(3, 0);
+		st.setInt(4, 0);
+		ResultSet results = null;
+
+		results = st.executeQuery();
+
+		if(results != null)
+		{
+			results.next();
+			login.setUser(results.getString(1));
+			login.setUserID(results.getInt("customer_id"));
+			login.setActive(results.getInt("status"));
+		}
+		else
+		{
+			login.setErrorText("Invalid Username password combination");
+		}
+
 		return login;
 	}
 	
-	public static LinkedList<Customer> RegisterCustomers()
+	public static User GetEmployee(String user, String passWord) throws Exception
+	{
+		log.info("in GetUser Dao Layer");
+		Employee login = new Employee();	
+
+		String query = "call \"EmployeeLogin\"(?,?,?);";
+		CallableStatement st =  DBConnection.getConnection().prepareCall(query);
+		
+		st.setString(1, user);
+		st.setString(2, passWord);
+		st.setInt(3, 0);
+		ResultSet results = null;
+
+		results = st.executeQuery();
+
+		if(results != null)
+		{
+			results.next();
+			login.setUser(results.getString(1));
+			login.setUserID(results.getInt("employee_id"));
+		}
+		else
+		{
+			login.setErrorText("Invalid Username password combination");
+		}
+
+		return login;
+	}
+	
+	public static LinkedList<Customer> RegisterCustomers() throws Exception
 	{
 		log.info("in Regester Customers Dao Layer");
 		LinkedList<Customer> customers = new LinkedList<Customer>();
 		
 		// gets a list of unregistered customers to register
 		String query = "select * from \"Customers\" inner join \"Users\" on \"Customers\".\"userID\" = \"Users\".\"ID\" where \"Customers\".active = 0 ;";
-		try {
-			Statement st = DBConnection.getConnection().createStatement();
-			ResultSet results = st.executeQuery(query);
-			while(results.next())
-			{
-				Customer c = new Customer();
-				c.setUserID(results.getInt(1));
-				c.setFirstName(results.getString(5));
-				c.setLastName(results.getString(6));
-				c.setEmail(results.getString(7));
-				c.setPhone(results.getString(8));
-				c.setActive(0);
-				customers.add(c);
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			log.warn("Register Customers failed: " + e.getMessage());
+
+		Statement st = DBConnection.getConnection().createStatement();
+		ResultSet results = st.executeQuery(query);
+		while(results.next())
+		{
+			Customer c = new Customer();
+			c.setUserID(results.getInt(1));
+			c.setFirstName(results.getString(5));
+			c.setLastName(results.getString(6));
+			c.setEmail(results.getString(7));
+			c.setPhone(results.getString(8));
+			c.setActive(0);
+			customers.add(c);
 		}
+
 		
 		
 		return customers;
 	}
-	public static LinkedList<Customer> getCustomers()
+	public static LinkedList<Customer> getCustomers() throws Exception
 	{
 		log.info("in getCustomers Dao Layer");
 		LinkedList<Customer> customers = new LinkedList<Customer>();
 		
-		String query = "select * from \"Customers\" inner join \"Users\" on \"Customers\".\"userID\" = \"Users\".\"ID\"";
-		try {
-			Statement st = DBConnection.getConnection().createStatement();
-			ResultSet results = st.executeQuery(query);
-			while(results.next())
-			{
-				Customer c = new Customer();
-				c.setUserID(results.getInt(1));
-				c.setFirstName(results.getString(5));
-				c.setLastName(results.getString(6));
-				c.setEmail(results.getString(7));
-				c.setPhone(results.getString(8));
-				c.setActive(0);
-				customers.add(c);
-				
-			}
-		}catch (SQLException e) {
-			// TODO Auto-generated catch block
-			log.warn("Get Customers failed: " + e.getMessage());
+		String query = "select * from \"Customers\" inner join \"Users\" on \"Customers\".\"userID\" = \"Users\".\"ID\" where \"Customers\".active = 1";
+
+		Statement st = DBConnection.getConnection().createStatement();
+		ResultSet results = st.executeQuery(query);
+		while(results.next())
+		{
+			Customer c = new Customer();
+			c.setUserID(results.getInt(1));
+			c.setFirstName(results.getString(5));
+			c.setLastName(results.getString(6));
+			c.setEmail(results.getString(7));
+			c.setPhone(results.getString(8));
+			c.setActive(0);
+			customers.add(c);
+			
 		}
-		
-		
+	
 		return customers;
 	}
 
 
-	public static void setRegistration(LinkedList<Customer> customerRegistration) {
+	public static void setRegistration(LinkedList<Customer> customerRegistration) throws Exception {
 		// TODO Auto-generated method stub
 		log.info("in Customer Registration Dao Layer");
 		String query = "call set_registration(?,?);";
-		try {
-			PreparedStatement st = DBConnection.getConnection().prepareStatement(query);
-			for(Customer c : customerRegistration)
-			{
-				st.setInt(1, c.getUserID());
-				st.setInt(2, c.isActive());
-				st.execute();
-			}
-			
-			
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			log.warn("Failed to Regester Customer: " + e.getMessage());
+		PreparedStatement st = DBConnection.getConnection().prepareStatement(query);
+		for(Customer c : customerRegistration)
+		{
+			st.setInt(1, c.getUserID());
+			st.setInt(2, c.isActive());
+			st.execute();
 		}
-		
+
 	}
 	
 	

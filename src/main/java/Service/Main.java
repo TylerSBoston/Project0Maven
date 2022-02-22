@@ -30,37 +30,80 @@ public class Main {
 				if(input.getOutput() == Command.command.customerLogin)
 				{
 					loggedInUser = userHandler.get(loggedInUser.getUser(), loggedInUser.getPassword());
-					if(loggedInUser.getErrorText() != "")
+					if(loggedInUser != null)
 					{
-						input.setOutput(Command.command.none);
-						presenter.transactionstatus(loggedInUser.getErrorText());
+						Customer c = (Customer) loggedInUser;
+						if(loggedInUser.getErrorText() != "" )
+						{
+							input.setOutput(Command.command.none);
+							presenter.serviceMessage(loggedInUser.getErrorText());
+						}
+						else if(c.isActive() == 0)
+						{
+							presenter.serviceMessage("Your Account is awaiting approval");
+							input.setOutput(Command.command.none);
+							
+						}
+						else if(c.isActive() == -1)
+						{
+							presenter.serviceMessage("Your Account has been denied");
+							input.setOutput(Command.command.none);
+						}
+						else if(c.isActive() == 1)
+						{
+							presenter.setLoggedInUser(loggedInUser);
+						}
 					}
 					else
 					{
-						presenter.setLoggedInUser(loggedInUser);
+						presenter.serviceMessage("Login Failed");
+						input.setOutput(Command.command.none);
+						loggedInUser = new User();
 					}
 				}
-				else if(input.getOutput() == Command.command.customerLogin)
+				else if(input.getOutput() == Command.command.employeeLogin)
 				{
-					loggedInUser = userHandler.get(loggedInUser.getUser(), loggedInUser.getPassword());
-					if(loggedInUser.getErrorText() != "")
+					loggedInUser = userHandler.getEmployee(loggedInUser.getUser(), loggedInUser.getPassword());
+					if(loggedInUser != null)
 					{
-						input.setOutput(Command.command.none);
-						presenter.transactionstatus(loggedInUser.getErrorText());
+						if(loggedInUser.getErrorText() != "")
+						{
+							input.setOutput(Command.command.none);
+							presenter.serviceMessage(loggedInUser.getErrorText());
+						}
+						else
+						{
+							presenter.setLoggedInUser(loggedInUser);
+						}
 					}
 					else
 					{
-						presenter.setLoggedInUser(loggedInUser);
+						presenter.serviceMessage("Login Failed");
+						input.setOutput(Command.command.none);
+						loggedInUser = new User();
 					}
 				}
 				else if(input.getOutput() == Command.command.createUserAccount)
 				{
 					loggedInUser = userHandler.add(loggedInUser);
-					presenter.setLoggedInUser(loggedInUser);
+					if(loggedInUser != null)
+					{
+						presenter.serviceMessage("Account Created and awaiting Approval");
+						input.setOutput(Command.command.none);
+					}
+					else
+					{
+						presenter.serviceMessage("Account Creation Failed");
+						input.setOutput(Command.command.none);
+						loggedInUser = new User();
+					}
 				}
 				else if(input.getOutput() == Command.command.exit)
 				{
-					DBConnection.closeConnection();
+					if(DBConnection.getConnection() != null)
+					{
+						DBConnection.closeConnection();
+					}
 					exit = false;
 					
 				}
@@ -70,9 +113,6 @@ public class Main {
 			
 			else if(loggedInUser instanceof Customer)
 			{
-				//*****************************************************************
-				// Accept Tranfer code here*********************************************************************
-				//*****************************************************************
 				
 				input = presenter.customerInterface();
 				switch (input.getOutput())

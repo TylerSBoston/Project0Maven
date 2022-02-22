@@ -71,3 +71,416 @@
 2022-02-18 14:19:30 INFO  DBAccountHandler:78 -  in getAccounts Service Layer
 2022-02-18 14:19:30 INFO  TextPresenter:326 - In display accounts Page
 2022-02-18 14:19:30 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 10:41:46 INFO  TextPresenter:18 - In login page
+2022-02-22 10:41:48 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 10:41:58 INFO  TextPresenter:18 - In login page
+2022-02-22 10:42:01 INFO  TextPresenter:87 - In create user Page
+2022-02-22 10:42:08 INFO  UserHandler:17 - in add User
+2022-02-22 10:42:08 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-22 10:42:08 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 10:42:08 ERROR DBConnection:26 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 10:42:08 INFO  DBConnection:35 - ReEstabilishing DB connection
+2022-02-22 10:42:08 ERROR DBConnection:40 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 10:42:08 INFO  UserHandler:25 - Failed to create userCannot invoke "java.sql.Connection.prepareStatement(String)" because the return value of "Dao.DBConnection.getConnection()" is null
+2022-02-22 10:50:59 INFO  TextPresenter:18 - In login page
+2022-02-22 10:51:00 INFO  TextPresenter:87 - In create user Page
+2022-02-22 10:51:06 INFO  UserHandler:17 - in add User
+2022-02-22 10:51:06 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-22 10:51:06 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 10:51:06 ERROR DBConnection:26 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 10:51:06 INFO  DBConnection:35 - ReEstabilishing DB connection
+2022-02-22 10:51:06 ERROR DBConnection:40 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 10:51:06 INFO  UserHandler:25 - Failed to create userCannot invoke "java.sql.Connection.prepareStatement(String)" because the return value of "Dao.DBConnection.getConnection()" is null
+2022-02-22 10:53:00 INFO  TextPresenter:18 - In login page
+2022-02-22 10:53:04 INFO  TextPresenter:87 - In create user Page
+2022-02-22 10:53:08 INFO  UserHandler:17 - in add User
+2022-02-22 10:53:08 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-22 10:53:08 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 10:53:08 ERROR DBConnection:26 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 10:53:08 INFO  DBConnection:35 - ReEstabilishing DB connection
+2022-02-22 10:53:08 ERROR DBConnection:40 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 10:53:08 INFO  UserHandler:25 - Failed to create userCannot invoke "java.sql.Connection.prepareStatement(String)" because the return value of "Dao.DBConnection.getConnection()" is null
+2022-02-22 10:53:08 INFO  TextPresenter:18 - In login page
+2022-02-22 10:54:07 INFO  TextPresenter:18 - In login page
+2022-02-22 10:54:09 INFO  TextPresenter:87 - In create user Page
+2022-02-22 10:54:14 INFO  UserHandler:17 - in add User
+2022-02-22 10:54:14 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-22 10:54:14 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 10:54:14 ERROR DBConnection:26 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 10:54:14 INFO  DBConnection:35 - ReEstabilishing DB connection
+2022-02-22 10:54:14 ERROR DBConnection:40 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 10:54:14 INFO  UserHandler:25 - Failed to create userCannot invoke "java.sql.Connection.prepareStatement(String)" because the return value of "Dao.DBConnection.getConnection()" is null
+2022-02-22 10:54:14 INFO  TextPresenter:18 - In login page
+2022-02-22 10:54:16 INFO  TextPresenter:87 - In create user Page
+2022-02-22 10:54:19 INFO  UserHandler:17 - in add User
+2022-02-22 10:54:19 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-22 10:54:19 INFO  DBConnection:35 - ReEstabilishing DB connection
+2022-02-22 10:54:19 ERROR DBConnection:40 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 10:54:19 INFO  UserHandler:25 - Failed to create userCannot invoke "java.sql.Connection.prepareStatement(String)" because the return value of "Dao.DBConnection.getConnection()" is null
+2022-02-22 10:54:19 INFO  TextPresenter:18 - In login page
+2022-02-22 10:54:23 INFO  UserHandler:49 - in get user service layer
+2022-02-22 10:54:23 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 10:54:23 INFO  DBConnection:35 - ReEstabilishing DB connection
+2022-02-22 10:54:23 ERROR DBConnection:40 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 10:54:23 WARN  UserHandler:54 - Failed to get CustomerCannot invoke "java.sql.Connection.prepareCall(String)" because the return value of "Dao.DBConnection.getConnection()" is null
+2022-02-22 10:54:23 INFO  TextPresenter:18 - In login page
+2022-02-22 10:56:35 INFO  TextPresenter:18 - In login page
+2022-02-22 10:56:36 INFO  TextPresenter:87 - In create user Page
+2022-02-22 10:56:40 INFO  UserHandler:17 - in add User
+2022-02-22 10:56:40 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-22 10:56:40 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 10:56:40 ERROR DBConnection:26 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 10:56:40 INFO  DBConnection:35 - ReEstabilishing DB connection
+2022-02-22 10:56:40 ERROR DBConnection:40 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 10:56:40 INFO  UserHandler:25 - Failed to create userCannot invoke "java.sql.Connection.prepareStatement(String)" because the return value of "Dao.DBConnection.getConnection()" is null
+2022-02-22 10:56:40 INFO  TextPresenter:18 - In login page
+2022-02-22 10:56:42 INFO  UserHandler:49 - in get user service layer
+2022-02-22 10:56:42 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 10:56:42 INFO  DBConnection:35 - ReEstabilishing DB connection
+2022-02-22 10:56:42 ERROR DBConnection:40 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 10:56:42 WARN  UserHandler:54 - Failed to get CustomerCannot invoke "java.sql.Connection.prepareCall(String)" because the return value of "Dao.DBConnection.getConnection()" is null
+2022-02-22 10:56:42 INFO  TextPresenter:18 - In login page
+2022-02-22 10:56:46 INFO  UserHandler:49 - in get user service layer
+2022-02-22 10:56:46 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 10:56:46 INFO  DBConnection:35 - ReEstabilishing DB connection
+2022-02-22 10:56:46 ERROR DBConnection:40 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 10:56:46 WARN  UserHandler:54 - Failed to get CustomerCannot invoke "java.sql.Connection.prepareCall(String)" because the return value of "Dao.DBConnection.getConnection()" is null
+2022-02-22 11:04:30 INFO  TextPresenter:18 - In login page
+2022-02-22 11:04:36 INFO  UserHandler:49 - in get user service layer
+2022-02-22 11:04:36 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 11:04:36 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 11:04:36 ERROR DBConnection:26 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 11:04:36 INFO  DBConnection:35 - ReEstabilishing DB connection
+2022-02-22 11:04:36 ERROR DBConnection:40 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 11:04:36 WARN  UserHandler:54 - Failed to get CustomerCannot invoke "java.sql.Connection.prepareCall(String)" because the return value of "Dao.DBConnection.getConnection()" is null
+2022-02-22 11:04:36 INFO  TextPresenter:18 - In login page
+2022-02-22 11:05:13 INFO  TextPresenter:18 - In login page
+2022-02-22 11:05:15 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 11:05:15 ERROR DBConnection:26 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 11:05:15 INFO  DBConnection:35 - ReEstabilishing DB connection
+2022-02-22 11:05:15 ERROR DBConnection:40 - Connection Failed Connection to localhost:54321 refused. Check that the hostname and port are correct and that the postmaster is accepting TCP/IP connections.
+2022-02-22 11:05:29 INFO  TextPresenter:18 - In login page
+2022-02-22 11:05:31 INFO  TextPresenter:87 - In create user Page
+2022-02-22 11:05:36 INFO  UserHandler:17 - in add User
+2022-02-22 11:05:36 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-22 11:05:36 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 11:05:36 INFO  UserHandler:49 - in get user service layer
+2022-02-22 11:05:36 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 11:05:36 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 11:05:39 INFO  TextPresenter:18 - In login page
+2022-02-22 11:05:42 INFO  UserHandler:49 - in get user service layer
+2022-02-22 11:05:42 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 11:05:42 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 11:05:45 INFO  TextPresenter:18 - In login page
+2022-02-22 11:05:49 INFO  UserHandler:49 - in get user service layer
+2022-02-22 11:05:49 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 11:05:49 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 11:05:57 INFO  TextPresenter:18 - In login page
+2022-02-22 11:06:08 INFO  UserHandler:49 - in get user service layer
+2022-02-22 11:06:08 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 11:06:08 WARN  UserHandler:54 - Failed to get CustomerERROR: procedure returned null record
+2022-02-22 11:06:08 INFO  TextPresenter:18 - In login page
+2022-02-22 11:07:58 INFO  UserHandler:49 - in get user service layer
+2022-02-22 11:07:58 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 11:07:58 WARN  UserHandler:54 - Failed to get CustomerERROR: procedure returned null record
+2022-02-22 11:07:58 INFO  TextPresenter:18 - In login page
+2022-02-22 11:08:05 INFO  UserHandler:49 - in get user service layer
+2022-02-22 11:08:05 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 11:08:05 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 11:08:06 INFO  TextPresenter:18 - In login page
+2022-02-22 11:08:08 INFO  UserHandler:49 - in get user service layer
+2022-02-22 11:08:08 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 11:08:08 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 11:09:34 INFO  TextPresenter:18 - In login page
+2022-02-22 11:09:48 INFO  UserHandler:60 - in get user service layer
+2022-02-22 11:09:48 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 11:09:48 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 11:09:49 WARN  UserHandler:65 - Failed to get EmployeeERROR: procedure returned null record
+2022-02-22 11:09:49 INFO  TextPresenter:18 - In login page
+2022-02-22 11:10:39 INFO  TextPresenter:18 - In login page
+2022-02-22 11:10:44 INFO  UserHandler:60 - in get user service layer
+2022-02-22 11:10:44 INFO  DBUserHandler:107 - in GetUser Dao Layer
+2022-02-22 11:10:44 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 11:10:44 INFO  TextPresenter:271 - In employee interface Page
+2022-02-22 11:10:46 INFO  UserHandler:89 - in RegisterCustomers  service layor
+2022-02-22 11:10:46 INFO  DBUserHandler:136 - in Regester Customers Dao Layer
+2022-02-22 11:10:46 INFO  TextPresenter:386 - In customer registration Page
+2022-02-22 11:10:48 INFO  UserHandler:101 - in setRegistratin service layor
+2022-02-22 11:10:48 INFO  DBUserHandler:188 - in Customer Registration Dao Layer
+2022-02-22 11:10:48 INFO  TextPresenter:271 - In employee interface Page
+2022-02-22 11:10:49 INFO  UserHandler:89 - in RegisterCustomers  service layor
+2022-02-22 11:10:49 INFO  DBUserHandler:136 - in Regester Customers Dao Layer
+2022-02-22 11:10:49 INFO  TextPresenter:386 - In customer registration Page
+2022-02-22 11:10:49 INFO  UserHandler:101 - in setRegistratin service layor
+2022-02-22 11:10:49 INFO  DBUserHandler:188 - in Customer Registration Dao Layer
+2022-02-22 11:10:49 INFO  TextPresenter:271 - In employee interface Page
+2022-02-22 11:10:52 INFO  UserHandler:78 - in getCustomers service layer
+2022-02-22 11:10:52 INFO  DBUserHandler:162 - in getCustomers Dao Layer
+2022-02-22 11:10:52 INFO  TextPresenter:431 - In display Page
+2022-02-22 11:10:52 INFO  TextPresenter:271 - In employee interface Page
+2022-02-22 11:10:58 INFO  TextPresenter:18 - In login page
+2022-02-22 11:11:02 INFO  UserHandler:49 - in get user service layer
+2022-02-22 11:11:02 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 11:11:02 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 11:11:04 INFO  TextPresenter:159 - In create Bank Account
+2022-02-22 11:11:13 INFO  DBAccountHandler:24 -  in add Account Dao
+2022-02-22 11:11:13 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 11:11:15 INFO  DBAccountHandler:78 -  in getAccounts Service Layer
+2022-02-22 11:11:15 INFO  TextPresenter:326 - In display accounts Page
+2022-02-22 11:11:15 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 11:11:17 INFO  DBAccountHandler:161 -  in getTransfers Dao
+2022-02-22 11:11:17 INFO  TextPresenter:360 - In display transactions Page
+2022-02-22 11:11:17 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 11:11:21 INFO  DBAccountHandler:78 -  in getAccounts Service Layer
+2022-02-22 11:11:22 INFO  TextPresenter:237 - In transfer
+2022-02-22 11:11:26 INFO  DBAccountHandler:132 -  in getBalance Dao
+2022-02-22 11:11:26 INFO  DBAccountHandler:115 -  in Transfer Dao
+2022-02-22 11:11:26 WARN  DBAccountHandler:127 - Transfer FailedERROR: null value in column "targetID" of relation "Transactions" violates not-null constraint
+  Detail: Failing row contains (1, null, 1, 2, 2022-02-22).
+  Where: SQL function "addtransaction" statement 3
+2022-02-22 11:11:26 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 11:12:03 INFO  DBAccountHandler:78 -  in getAccounts Service Layer
+2022-02-22 11:12:03 INFO  TextPresenter:326 - In display accounts Page
+2022-02-22 11:12:03 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:03:01 INFO  TextPresenter:18 - In login page
+2022-02-22 12:03:05 INFO  UserHandler:49 - in get user service layer
+2022-02-22 12:03:05 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 12:03:05 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 12:03:05 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:03:06 INFO  TextPresenter:18 - In login page
+2022-02-22 12:03:07 INFO  TextPresenter:87 - In create user Page
+2022-02-22 12:03:27 INFO  UserHandler:17 - in add User
+2022-02-22 12:03:27 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-22 12:03:27 INFO  UserHandler:49 - in get user service layer
+2022-02-22 12:03:27 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 12:03:27 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:03:31 INFO  TextPresenter:159 - In create Bank Account
+2022-02-22 12:03:40 INFO  DBAccountHandler:24 -  in add Account Dao
+2022-02-22 12:03:40 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:03:41 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:03:41 INFO  TextPresenter:326 - In display accounts Page
+2022-02-22 12:03:41 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:04:33 INFO  TextPresenter:159 - In create Bank Account
+2022-02-22 12:04:41 INFO  DBAccountHandler:24 -  in add Account Dao
+2022-02-22 12:04:41 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:04:42 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:04:42 INFO  TextPresenter:326 - In display accounts Page
+2022-02-22 12:04:42 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:05:07 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:05:07 INFO  TextPresenter:237 - In transfer
+2022-02-22 12:05:28 INFO  DBAccountHandler:112 -  in getBalance Dao
+2022-02-22 12:05:28 INFO  DBAccountHandler:98 -  in Transfer Dao
+2022-02-22 12:05:28 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:05:30 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:05:30 INFO  TextPresenter:326 - In display accounts Page
+2022-02-22 12:05:30 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:05:39 INFO  DBAccountHandler:134 -  in getTransfers Dao
+2022-02-22 12:05:39 INFO  TextPresenter:360 - In display transactions Page
+2022-02-22 12:05:39 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:05:48 INFO  TextPresenter:18 - In login page
+2022-02-22 12:05:53 INFO  UserHandler:60 - in get user service layer
+2022-02-22 12:05:53 INFO  DBUserHandler:107 - in GetUser Dao Layer
+2022-02-22 12:05:53 INFO  TextPresenter:271 - In employee interface Page
+2022-02-22 12:05:55 INFO  UserHandler:89 - in RegisterCustomers  service layor
+2022-02-22 12:05:55 INFO  DBUserHandler:136 - in Regester Customers Dao Layer
+2022-02-22 12:05:55 INFO  TextPresenter:386 - In customer registration Page
+2022-02-22 12:05:57 INFO  UserHandler:101 - in setRegistratin service layor
+2022-02-22 12:05:57 INFO  DBUserHandler:188 - in Customer Registration Dao Layer
+2022-02-22 12:05:57 INFO  TextPresenter:271 - In employee interface Page
+2022-02-22 12:05:58 INFO  UserHandler:78 - in getCustomers service layer
+2022-02-22 12:05:58 INFO  DBUserHandler:162 - in getCustomers Dao Layer
+2022-02-22 12:05:58 INFO  TextPresenter:431 - In display Page
+2022-02-22 12:05:58 INFO  TextPresenter:271 - In employee interface Page
+2022-02-22 12:06:01 INFO  TextPresenter:18 - In login page
+2022-02-22 12:06:06 INFO  UserHandler:49 - in get user service layer
+2022-02-22 12:06:06 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 12:06:06 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:06:08 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:06:08 INFO  TextPresenter:326 - In display accounts Page
+2022-02-22 12:06:08 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:06:09 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:06:09 INFO  TextPresenter:237 - In transfer
+2022-02-22 12:06:14 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:06:19 INFO  DBAccountHandler:134 -  in getTransfers Dao
+2022-02-22 12:06:19 INFO  TextPresenter:360 - In display transactions Page
+2022-02-22 12:06:19 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:06:24 INFO  TextPresenter:18 - In login page
+2022-02-22 12:11:06 INFO  TextPresenter:18 - In login page
+2022-02-22 12:11:08 INFO  TextPresenter:87 - In create user Page
+2022-02-22 12:11:19 INFO  UserHandler:17 - in add User
+2022-02-22 12:11:19 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-22 12:11:19 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 12:11:19 INFO  UserHandler:49 - in get user service layer
+2022-02-22 12:11:19 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 12:11:19 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:11:23 INFO  TextPresenter:18 - In login page
+2022-02-22 12:11:27 INFO  UserHandler:49 - in get user service layer
+2022-02-22 12:11:27 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 12:11:27 INFO  TextPresenter:18 - In login page
+2022-02-22 12:17:40 INFO  TextPresenter:18 - In login page
+2022-02-22 12:17:43 INFO  TextPresenter:87 - In create user Page
+2022-02-22 12:17:51 INFO  UserHandler:17 - in add User
+2022-02-22 12:17:51 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-22 12:17:51 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 12:17:52 INFO  UserHandler:47 - in get user service layer
+2022-02-22 12:17:52 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 12:17:52 INFO  TextPresenter:18 - In login page
+2022-02-22 12:18:00 INFO  UserHandler:47 - in get user service layer
+2022-02-22 12:18:00 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 12:18:00 INFO  TextPresenter:18 - In login page
+2022-02-22 12:19:56 INFO  UserHandler:58 - in get Employee service layer
+2022-02-22 12:19:56 INFO  DBUserHandler:107 - in GetUser Dao Layer
+2022-02-22 12:19:56 INFO  TextPresenter:271 - In employee interface Page
+2022-02-22 12:19:58 INFO  UserHandler:87 - in RegisterCustomers  service layor
+2022-02-22 12:19:58 INFO  DBUserHandler:136 - in Regester Customers Dao Layer
+2022-02-22 12:19:58 INFO  TextPresenter:387 - In customer registration Page
+2022-02-22 12:20:02 INFO  UserHandler:99 - in setRegistratin service layor
+2022-02-22 12:20:02 INFO  DBUserHandler:188 - in Customer Registration Dao Layer
+2022-02-22 12:20:02 INFO  TextPresenter:271 - In employee interface Page
+2022-02-22 12:20:07 INFO  UserHandler:76 - in getCustomers service layer
+2022-02-22 12:20:07 INFO  DBUserHandler:162 - in getCustomers Dao Layer
+2022-02-22 12:20:07 INFO  TextPresenter:432 - In display Page
+2022-02-22 12:20:07 INFO  TextPresenter:271 - In employee interface Page
+2022-02-22 12:20:14 INFO  TextPresenter:18 - In login page
+2022-02-22 12:20:18 INFO  UserHandler:47 - in get user service layer
+2022-02-22 12:20:18 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 12:20:18 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:20:20 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:20:20 INFO  TextPresenter:327 - In display accounts Page
+2022-02-22 12:20:20 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:20:24 INFO  DBAccountHandler:134 -  in getTransfers Dao
+2022-02-22 12:20:24 INFO  TextPresenter:361 - In display transactions Page
+2022-02-22 12:20:24 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:20:27 INFO  TextPresenter:18 - In login page
+2022-02-22 12:38:18 INFO  TextPresenter:18 - In login page
+2022-02-22 12:38:23 INFO  UserHandler:47 - in get user service layer
+2022-02-22 12:38:23 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 12:38:23 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 12:38:23 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:38:25 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:38:25 INFO  TextPresenter:327 - In display accounts Page
+2022-02-22 12:38:25 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:38:26 INFO  TextPresenter:159 - In create Bank Account
+2022-02-22 12:38:35 INFO  DBAccountHandler:24 -  in add Account Dao
+2022-02-22 12:38:35 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:38:36 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:38:36 INFO  TextPresenter:327 - In display accounts Page
+2022-02-22 12:38:36 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:38:38 INFO  TextPresenter:159 - In create Bank Account
+2022-02-22 12:38:46 INFO  DBAccountHandler:24 -  in add Account Dao
+2022-02-22 12:38:46 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:38:47 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:38:47 INFO  TextPresenter:327 - In display accounts Page
+2022-02-22 12:38:47 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:38:53 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:38:53 INFO  TextPresenter:237 - In transfer
+2022-02-22 12:39:21 INFO  DBAccountHandler:112 -  in getBalance Dao
+2022-02-22 12:39:21 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:39:25 INFO  DBAccountHandler:134 -  in getTransfers Dao
+2022-02-22 12:39:25 INFO  TextPresenter:361 - In display transactions Page
+2022-02-22 12:39:25 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:39:27 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:39:27 INFO  TextPresenter:237 - In transfer
+2022-02-22 12:39:45 INFO  DBAccountHandler:112 -  in getBalance Dao
+2022-02-22 12:39:45 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:39:48 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:39:48 INFO  TextPresenter:237 - In transfer
+2022-02-22 12:40:35 INFO  DBAccountHandler:112 -  in getBalance Dao
+2022-02-22 12:40:35 INFO  DBAccountHandler:98 -  in Transfer Dao
+2022-02-22 12:40:35 WARN  AccountHandler:93 - Transfer Failed ERROR: null value in column "targetID" of relation "Transactions" violates not-null constraint
+  Detail: Failing row contains (3, null, 5, 613, 2022-02-22).
+  Where: SQL function "addtransaction" statement 3
+2022-02-22 12:40:35 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:40:43 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:40:43 INFO  TextPresenter:237 - In transfer
+2022-02-22 12:41:02 INFO  DBAccountHandler:112 -  in getBalance Dao
+2022-02-22 12:41:02 INFO  DBAccountHandler:98 -  in Transfer Dao
+2022-02-22 12:41:02 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:41:05 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:41:05 INFO  TextPresenter:237 - In transfer
+2022-02-22 12:41:09 INFO  DBAccountHandler:112 -  in getBalance Dao
+2022-02-22 12:41:09 INFO  DBAccountHandler:98 -  in Transfer Dao
+2022-02-22 12:41:09 WARN  AccountHandler:93 - Transfer Failed ERROR: null value in column "targetID" of relation "Transactions" violates not-null constraint
+  Detail: Failing row contains (5, null, 5, 2, 2022-02-22).
+  Where: SQL function "addtransaction" statement 3
+2022-02-22 12:41:09 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:41:16 INFO  DBAccountHandler:134 -  in getTransfers Dao
+2022-02-22 12:41:16 INFO  TextPresenter:361 - In display transactions Page
+2022-02-22 12:41:16 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:41:22 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:41:22 INFO  TextPresenter:327 - In display accounts Page
+2022-02-22 12:41:22 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:41:26 INFO  TextPresenter:18 - In login page
+2022-02-22 12:41:31 INFO  UserHandler:47 - in get user service layer
+2022-02-22 12:41:31 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 12:41:31 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:41:34 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:41:34 INFO  TextPresenter:327 - In display accounts Page
+2022-02-22 12:41:34 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:41:42 INFO  DBAccountHandler:134 -  in getTransfers Dao
+2022-02-22 12:41:42 INFO  TextPresenter:361 - In display transactions Page
+2022-02-22 12:41:42 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:41:49 INFO  TextPresenter:18 - In login page
+2022-02-22 12:41:57 INFO  UserHandler:58 - in get Employee service layer
+2022-02-22 12:41:57 INFO  DBUserHandler:107 - in GetUser Dao Layer
+2022-02-22 12:41:57 INFO  TextPresenter:271 - In employee interface Page
+2022-02-22 12:41:58 INFO  UserHandler:87 - in RegisterCustomers  service layor
+2022-02-22 12:41:58 INFO  DBUserHandler:136 - in Regester Customers Dao Layer
+2022-02-22 12:41:58 INFO  TextPresenter:387 - In customer registration Page
+2022-02-22 12:41:58 INFO  UserHandler:99 - in setRegistratin service layor
+2022-02-22 12:41:58 INFO  DBUserHandler:188 - in Customer Registration Dao Layer
+2022-02-22 12:41:58 INFO  TextPresenter:271 - In employee interface Page
+2022-02-22 12:42:07 INFO  TextPresenter:18 - In login page
+2022-02-22 12:43:20 INFO  TextPresenter:18 - In login page
+2022-02-22 12:43:26 INFO  UserHandler:47 - in get user service layer
+2022-02-22 12:43:26 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 12:43:26 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 12:43:26 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:43:27 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:43:27 INFO  TextPresenter:326 - In display accounts Page
+2022-02-22 12:43:27 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:43:31 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-22 12:43:31 INFO  TextPresenter:237 - In transfer
+2022-02-22 12:43:45 INFO  DBAccountHandler:112 -  in getBalance Dao
+2022-02-22 12:43:45 INFO  DBAccountHandler:98 -  in Transfer Dao
+2022-02-22 12:43:45 INFO  TextPresenter:115 - In customer interface Page
+2022-02-22 12:43:50 INFO  TextPresenter:18 - In login page
+2022-02-22 14:14:17 INFO  TextPresenter:18 - In login page
+2022-02-22 14:14:20 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 14:57:13 INFO  TextPresenter:18 - In login page
+2022-02-22 14:57:25 INFO  TextPresenter:87 - In create user Page
+2022-02-22 14:57:46 INFO  UserHandler:17 - in add User
+2022-02-22 14:57:46 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-22 14:57:46 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 14:57:46 INFO  UserHandler:47 - in get user service layer
+2022-02-22 14:57:46 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 14:57:46 INFO  TextPresenter:18 - In login page
+2022-02-22 14:57:54 INFO  UserHandler:58 - in get Employee service layer
+2022-02-22 14:57:54 INFO  DBUserHandler:107 - in GetUser Dao Layer
+2022-02-22 14:57:54 INFO  TextPresenter:270 - In employee interface Page
+2022-02-22 14:57:55 INFO  UserHandler:87 - in RegisterCustomers  service layor
+2022-02-22 14:57:55 INFO  DBUserHandler:136 - in Regester Customers Dao Layer
+2022-02-22 14:57:55 INFO  TextPresenter:386 - In customer registration Page
+2022-02-22 14:57:58 INFO  UserHandler:99 - in setRegistratin service layor
+2022-02-22 14:57:58 INFO  DBUserHandler:188 - in Customer Registration Dao Layer
+2022-02-22 14:57:58 INFO  TextPresenter:270 - In employee interface Page
+2022-02-22 14:58:01 INFO  UserHandler:76 - in getCustomers service layer
+2022-02-22 14:58:01 INFO  DBUserHandler:162 - in getCustomers Dao Layer
+2022-02-22 14:58:01 INFO  TextPresenter:431 - In display Page
+2022-02-22 14:58:01 INFO  TextPresenter:270 - In employee interface Page
+2022-02-22 14:58:08 INFO  TextPresenter:18 - In login page
+2022-02-22 14:58:13 INFO  UserHandler:47 - in get user service layer
+2022-02-22 14:58:13 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-22 14:58:13 INFO  TextPresenter:18 - In login page
+2022-02-22 15:01:06 INFO  TextPresenter:18 - In login page
+2022-02-22 15:01:15 INFO  UserHandler:58 - in get Employee service layer
+2022-02-22 15:01:15 INFO  DBUserHandler:107 - in GetUser Dao Layer
+2022-02-22 15:01:15 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 15:01:15 INFO  TextPresenter:270 - In employee interface Page
+2022-02-22 15:01:17 INFO  UserHandler:76 - in getCustomers service layer
+2022-02-22 15:01:17 INFO  DBUserHandler:162 - in getCustomers Dao Layer
+2022-02-22 15:01:17 WARN  UserHandler:81 - Get Customers failed: ERROR: column Customers.Active does not exist
+  Hint: Perhaps you meant to reference the column "Customers.active".
+  Position: 91
+2022-02-22 15:01:17 INFO  TextPresenter:431 - In display Page
+2022-02-22 15:01:17 INFO  TextPresenter:270 - In employee interface Page

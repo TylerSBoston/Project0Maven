@@ -8,4 +8,8 @@ public class Employee extends User {
 		// TODO Auto-generated constructor stub
 	}
 
+	public Employee() {
+		// TODO Auto-generated constructor stub
+	}
+
 }

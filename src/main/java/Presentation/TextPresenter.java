@@ -254,8 +254,7 @@ public class TextPresenter {
 		System.out.println("Transferee Account Number: ");
 		String accountNumb = scanner.nextLine().trim();
 		System.out.println("transfer Amount: ");
-		double input = scanner.nextDouble();
-		scanner.nextLine();
+		double input = InputVerifier.verifyFloat(scanner);
 		BigDecimal transfer = new BigDecimal(input);
 		transfer.setScale(2,RoundingMode.CEILING);
 		Transfer out = new Transfer(transfer,routingNumb,accountNumb,loggedInUser.getAccounts().get(accountNumber).getID());
@@ -314,7 +313,8 @@ public class TextPresenter {
 		else
 			System.out.println("Transaction Failed");
 	}
-	public static void transactionstatus(String errorMessage)
+	// this has now being used to output warnings and other messages to the user instead of just transactions
+	public static void serviceMessage(String errorMessage)
 	{
 		System.out.println(errorMessage);
 	}
@@ -325,19 +325,26 @@ public class TextPresenter {
 	{
 		log.info("In display accounts Page");
 		System.out.println();
-		if(accounts.size() == 0)
+		if(accounts != null)
 		{
-			System.out.println("You do not have any accounts");
+			if(accounts.size() == 0)
+			{
+				System.out.println("You do not have any accounts");
+			}
+			for(Account a : accounts)
+			{
+				System.out.println("******************************************");
+				System.out.println("Account: " + a.getAccountName());
+				System.out.println("Balance: " + a.getBalance().toString());
+				System.out.println("Routing number: " + a.getRoutingNumber());
+				System.out.println("Routing number: " + a.getAccountNumber());
+				System.out.println("Account type: " + a.getAccountType());
+				System.out.println("******************************************");	
+			}
 		}
-		for(Account a : accounts)
+		else
 		{
-			System.out.println("******************************************");
-			System.out.println("Account: " + a.getAccountName());
-			System.out.println("Balance: " + a.getBalance().toString());
-			System.out.println("Routing number: " + a.getRoutingNumber());
-			System.out.println("Routing number: " + a.getAccountNumber());
-			System.out.println("Account type: " + a.getAccountType());
-			System.out.println("******************************************");	
+			System.out.println("Currently Unavailable");
 		}
 		
 		
@@ -352,16 +359,23 @@ public class TextPresenter {
 		// TODO Auto-generated method stub
 		log.info("In display transactions Page");
 		System.out.println();
-		System.out.println("******************************************");
-		if(transactions.size() == 0)
+		if(transactions != null)
 		{
-			System.out.println("You do not have any Trajsactions");
+			System.out.println("******************************************");
+			if(transactions.size() == 0)
+			{
+				System.out.println("You do not have any Transactions");
+			}
+			for(TransactionView t : transactions)
+			{	
+				System.out.println("From:  "+t.getSenderName() + " , " + t.getSenderAccountName() + "    To: "+ t.getRecieverName() +" , "+ t.getRecieverAccountName() + "        " + t.getAmount().toString()+  "     " +t.getDate());
+			}
+			System.out.println("******************************************");
 		}
-		for(TransactionView t : transactions)
-		{	
-			System.out.println("From:  "+t.getSenderName() + " , " + t.getSenderAccountName() + "    To: "+ t.getRecieverName() +" , "+ t.getRecieverAccountName() + "        " + t.getAmount().toString()+  "     " +t.getDate());
+		else
+		{
+			System.out.println("Transactions Unavailable");
 		}
-		System.out.println("******************************************");
 		
 	}
 
@@ -371,35 +385,43 @@ public class TextPresenter {
 		// TODO Auto-generated method stub
 		log.info("In customer registration Page");
 		System.out.println("Listing unregistered Users");
-		for(Customer c : registerCustomers)
+		if(registerCustomers != null)
 		{
-			System.out.println();
-			System.out.println("Name: " +c.getFirstName() + " " + c.getLastName());
-			System.out.println("Email: " + c.getEmail());
-			System.out.println("Phone: " + c.getPhone());
-			System.out.println("\nApprove? Y/N");
-			boolean pass = false;
-			String nextLine;
-			while(pass == false)
+			for(Customer c : registerCustomers)
 			{
-				nextLine = scanner.nextLine();
-				if(nextLine.equals("Y"))
+				System.out.println();
+				System.out.println("Name: " +c.getFirstName() + " " + c.getLastName());
+				System.out.println("Email: " + c.getEmail());
+				System.out.println("Phone: " + c.getPhone());
+				System.out.println("\nApprove? Y/N");
+				boolean pass = false;
+				String nextLine;
+				while(pass == false)
 				{
-					c.setActive(1);
-					pass = true;
-				}
-				else if(nextLine.equals("N"))
-				{
-					c.setActive(-1);
-					pass = true;
-				}
-				else
-				{
-					System.out.println("Enter a valid input");
+					nextLine = scanner.nextLine();
+					if(nextLine.equals("Y"))
+					{
+						c.setActive(1);
+						pass = true;
+					}
+					else if(nextLine.equals("N"))
+					{
+						c.setActive(-1);
+						pass = true;
+					}
+					else
+					{
+						System.out.println("Enter a valid input");
+					}
 				}
 			}
+			return registerCustomers;
 		}
-		return registerCustomers;
+		else
+		{
+			return new LinkedList<Customer>();
+		}
+		
 	}
 
 
@@ -407,20 +429,18 @@ public class TextPresenter {
 	public void DisplayCustomers(LinkedList<Customer> customers) {
 		// TODO Auto-generated method stub
 		log.info("In display Page");
-		System.out.println("**********************************");
-		for(Customer c : customers)
+		if(customers != null)
 		{
-			System.out.println();
-			System.out.println("Name: " +c.getFirstName() + " " + c.getLastName());
-			System.out.println("Email: " + c.getEmail());
-			System.out.println("Phone: " + c.getPhone());
 			System.out.println("**********************************");
-
+			for(Customer c : customers)
+			{
+				System.out.println();
+				System.out.println("Name: " +c.getFirstName() + " " + c.getLastName());
+				System.out.println("Email: " + c.getEmail());
+				System.out.println("Phone: " + c.getPhone());
+				System.out.println("**********************************");
+			}
 		}
-		
-		
-		
-		
 	}
 	
 
