@@ -23,9 +23,9 @@ public class TextPresenter {
 		}
 		while(true)
 		{
-			System.out.println(	"1.) to create account\n"
-							+	"2.) for Customer Login\n"
-							+ 	"3.) for Employee Login\n"
+			System.out.println(	"1.) Create account\n"
+							+	"2.) Customer Login\n"
+							+ 	"3.) Employee Login\n"
 							+ 	"0.) Exit");
 			returnValue = InputVerifier.verifyInt(scanner);
 			if(returnValue == 2)
@@ -238,29 +238,59 @@ public class TextPresenter {
 		Command com = new Command();
 		com.setUser(loggedInUser);
 		int accountNumber = 0;
-		if(loggedInUser.getAccounts().size() >= 2)
+		if(loggedInUser.getAccounts() != null)
 		{
-			System.out.println("select account to transfer from");
-			for(int spot = 0; spot<loggedInUser.getAccounts().size(); spot++)
+			if(loggedInUser.getAccounts().size() >= 2)
 			{
-				System.out.println((spot+1) + ".)" + loggedInUser.getAccounts().get(spot).getAccountName());
+				System.out.println("select account to transfer from");
+				for(int spot = 0; spot<loggedInUser.getAccounts().size(); spot++)
+				{
+					System.out.println((spot+1) + ".)" + loggedInUser.getAccounts().get(spot).getAccountName());
+				}
+				System.out.println();
+				accountNumber = InputVerifier.verifyInt(scanner) - 1;
+				scanner.nextLine();
+				System.out.println("Transferee Routing Number: ");
+				String routingNumb = scanner.nextLine().trim();
+				System.out.println("Transferee Account Number: ");
+				String accountNumb = scanner.nextLine().trim();
+				System.out.println("transfer Amount: ");
+				double input = InputVerifier.verifyFloat(scanner);
+				BigDecimal transfer = new BigDecimal(input);
+				transfer.setScale(2,RoundingMode.CEILING);
+				Transfer out = new Transfer(transfer,routingNumb,accountNumb,loggedInUser.getAccounts().get(accountNumber).getID());
+				com.setReturnObject(out);
+				com.setOutput(Command.command.transfer);
+				System.out.println("");
 			}
-			System.out.println();
-			accountNumber = InputVerifier.verifyInt(scanner) - 1;
-			scanner.nextLine();
+			else if(loggedInUser.getAccounts().size() > 0)
+			{
+			System.out.println("Transferee Routing Number: ");
+			String routingNumb = scanner.nextLine().trim();
+			System.out.println("Transferee Account Number: ");
+			String accountNumb = scanner.nextLine().trim();
+			System.out.println("transfer Amount: ");
+			double input = InputVerifier.verifyFloat(scanner);
+			BigDecimal transfer = new BigDecimal(input);
+			transfer.setScale(2,RoundingMode.CEILING);
+			Transfer out = new Transfer(transfer,routingNumb,accountNumb,loggedInUser.getAccounts().get(accountNumber).getID());
+			com.setReturnObject(out);
+			com.setOutput(Command.command.transfer);
+			System.out.println("");
+			}
+			else
+			{
+				// just to put in a object
+				com.setReturnObject(loggedInUser);
+				System.out.println("No Accounts to transfer from");
+			}
 		}
-		System.out.println("Transferee Routing Number: ");
-		String routingNumb = scanner.nextLine().trim();
-		System.out.println("Transferee Account Number: ");
-		String accountNumb = scanner.nextLine().trim();
-		System.out.println("transfer Amount: ");
-		double input = InputVerifier.verifyFloat(scanner);
-		BigDecimal transfer = new BigDecimal(input);
-		transfer.setScale(2,RoundingMode.CEILING);
-		Transfer out = new Transfer(transfer,routingNumb,accountNumb,loggedInUser.getAccounts().get(accountNumber).getID());
-		com.setReturnObject(out);
-		com.setOutput(Command.command.transfer);
-		System.out.println("");
+		else 
+		{
+			// just to put in a object
+			com.setReturnObject(loggedInUser);
+			System.out.println("No Accounts to transfer from");
+		}
 		return com;
 	}
 	public Command EmployeeInterface()

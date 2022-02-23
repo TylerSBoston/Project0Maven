@@ -178,6 +178,9 @@ public class Main {
 					loggedInUser = new User();
 					presenter.setLoggedInUser(loggedInUser);
 					break;
+				default :
+					
+				break;
 				}
 				
 				

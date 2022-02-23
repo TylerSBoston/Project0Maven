@@ -484,3 +484,262 @@
   Position: 91
 2022-02-22 15:01:17 INFO  TextPresenter:431 - In display Page
 2022-02-22 15:01:17 INFO  TextPresenter:270 - In employee interface Page
+2022-02-22 15:01:49 INFO  TextPresenter:18 - In login page
+2022-02-22 15:01:55 INFO  UserHandler:58 - in get Employee service layer
+2022-02-22 15:01:55 INFO  DBUserHandler:107 - in GetUser Dao Layer
+2022-02-22 15:01:55 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-22 15:01:55 INFO  TextPresenter:270 - In employee interface Page
+2022-02-22 15:01:57 INFO  UserHandler:76 - in getCustomers service layer
+2022-02-22 15:01:57 INFO  DBUserHandler:162 - in getCustomers Dao Layer
+2022-02-22 15:01:57 INFO  TextPresenter:431 - In display Page
+2022-02-22 15:01:57 INFO  TextPresenter:270 - In employee interface Page
+2022-02-23 10:01:51 INFO  TextPresenter:18 - In login page
+2022-02-23 10:01:54 INFO  TextPresenter:87 - In create user Page
+2022-02-23 10:01:59 INFO  UserHandler:17 - in add User
+2022-02-23 10:01:59 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-23 10:01:59 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-23 10:01:59 INFO  UserHandler:47 - in get user service layer
+2022-02-23 10:01:59 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-23 10:01:59 INFO  TextPresenter:18 - In login page
+2022-02-23 10:02:04 INFO  TextPresenter:87 - In create user Page
+2022-02-23 10:02:33 INFO  UserHandler:17 - in add User
+2022-02-23 10:02:33 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-23 10:02:33 INFO  UserHandler:47 - in get user service layer
+2022-02-23 10:02:33 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-23 10:02:33 INFO  TextPresenter:18 - In login page
+2022-02-23 10:02:41 INFO  UserHandler:58 - in get Employee service layer
+2022-02-23 10:02:41 INFO  DBUserHandler:107 - in GetUser Dao Layer
+2022-02-23 10:02:41 INFO  TextPresenter:270 - In employee interface Page
+2022-02-23 10:02:42 INFO  UserHandler:87 - in RegisterCustomers  service layor
+2022-02-23 10:02:42 INFO  DBUserHandler:136 - in Regester Customers Dao Layer
+2022-02-23 10:02:42 INFO  TextPresenter:386 - In customer registration Page
+2022-02-23 10:02:46 INFO  UserHandler:99 - in setRegistratin service layor
+2022-02-23 10:02:46 INFO  DBUserHandler:188 - in Customer Registration Dao Layer
+2022-02-23 10:02:46 INFO  TextPresenter:270 - In employee interface Page
+2022-02-23 10:02:48 INFO  UserHandler:76 - in getCustomers service layer
+2022-02-23 10:02:48 INFO  DBUserHandler:162 - in getCustomers Dao Layer
+2022-02-23 10:02:48 INFO  TextPresenter:431 - In display Page
+2022-02-23 10:02:48 INFO  TextPresenter:270 - In employee interface Page
+2022-02-23 10:02:52 INFO  TextPresenter:18 - In login page
+2022-02-23 10:03:03 INFO  UserHandler:47 - in get user service layer
+2022-02-23 10:03:03 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-23 10:03:03 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:03:06 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 10:03:06 INFO  TextPresenter:326 - In display accounts Page
+2022-02-23 10:03:06 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:03:09 INFO  DBAccountHandler:134 -  in getTransfers Dao
+2022-02-23 10:03:09 INFO  TextPresenter:360 - In display transactions Page
+2022-02-23 10:03:09 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:03:11 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 10:03:11 INFO  TextPresenter:237 - In transfer
+2022-02-23 10:10:24 INFO  TextPresenter:18 - In login page
+2022-02-23 10:10:28 INFO  UserHandler:47 - in get user service layer
+2022-02-23 10:10:28 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-23 10:10:28 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-23 10:10:28 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:10:32 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 10:10:32 INFO  TextPresenter:237 - In transfer
+2022-02-23 10:10:32 INFO  TextPresenter:18 - In login page
+2022-02-23 10:11:00 INFO  TextPresenter:18 - In login page
+2022-02-23 10:11:03 INFO  UserHandler:47 - in get user service layer
+2022-02-23 10:11:03 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-23 10:11:03 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-23 10:11:03 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:11:06 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 10:11:06 INFO  TextPresenter:237 - In transfer
+2022-02-23 10:11:06 INFO  TextPresenter:18 - In login page
+2022-02-23 10:11:10 INFO  TextPresenter:87 - In create user Page
+2022-02-23 10:12:41 INFO  TextPresenter:18 - In login page
+2022-02-23 10:12:45 INFO  UserHandler:47 - in get user service layer
+2022-02-23 10:12:45 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-23 10:12:45 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-23 10:12:45 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:12:47 INFO  TextPresenter:159 - In create Bank Account
+2022-02-23 10:12:56 INFO  DBAccountHandler:24 -  in add Account Dao
+2022-02-23 10:12:56 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:13:02 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 10:13:02 INFO  TextPresenter:344 - In display accounts Page
+2022-02-23 10:13:02 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:13:25 INFO  TextPresenter:159 - In create Bank Account
+2022-02-23 10:13:30 INFO  DBAccountHandler:24 -  in add Account Dao
+2022-02-23 10:13:30 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:13:31 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 10:13:31 INFO  TextPresenter:344 - In display accounts Page
+2022-02-23 10:13:31 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:13:42 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 10:13:42 INFO  TextPresenter:237 - In transfer
+2022-02-23 10:13:47 INFO  TextPresenter:18 - In login page
+2022-02-23 10:15:26 INFO  TextPresenter:18 - In login page
+2022-02-23 10:15:29 INFO  UserHandler:47 - in get user service layer
+2022-02-23 10:15:29 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-23 10:15:29 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-23 10:15:29 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:15:32 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 10:15:32 INFO  TextPresenter:356 - In display accounts Page
+2022-02-23 10:15:32 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:15:34 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 10:15:34 INFO  TextPresenter:237 - In transfer
+2022-02-23 10:16:03 INFO  DBAccountHandler:112 -  in getBalance Dao
+2022-02-23 10:16:03 INFO  DBAccountHandler:98 -  in Transfer Dao
+2022-02-23 10:16:03 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:16:06 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 10:16:06 INFO  TextPresenter:356 - In display accounts Page
+2022-02-23 10:16:06 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:16:17 INFO  DBAccountHandler:134 -  in getTransfers Dao
+2022-02-23 10:16:17 INFO  TextPresenter:390 - In display transactions Page
+2022-02-23 10:16:17 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:16:25 INFO  TextPresenter:18 - In login page
+2022-02-23 10:16:38 INFO  UserHandler:47 - in get user service layer
+2022-02-23 10:16:38 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-23 10:16:38 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:16:39 INFO  TextPresenter:159 - In create Bank Account
+2022-02-23 10:16:50 INFO  DBAccountHandler:24 -  in add Account Dao
+2022-02-23 10:16:50 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:16:51 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 10:16:51 INFO  TextPresenter:356 - In display accounts Page
+2022-02-23 10:16:51 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:16:57 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 10:16:57 INFO  TextPresenter:237 - In transfer
+2022-02-23 10:17:28 INFO  DBAccountHandler:112 -  in getBalance Dao
+2022-02-23 10:17:28 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:17:31 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 10:17:31 INFO  TextPresenter:237 - In transfer
+2022-02-23 10:17:43 INFO  DBAccountHandler:112 -  in getBalance Dao
+2022-02-23 10:17:43 INFO  DBAccountHandler:98 -  in Transfer Dao
+2022-02-23 10:17:43 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:17:48 INFO  DBAccountHandler:134 -  in getTransfers Dao
+2022-02-23 10:17:48 INFO  TextPresenter:390 - In display transactions Page
+2022-02-23 10:17:48 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:17:52 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 10:17:52 INFO  TextPresenter:356 - In display accounts Page
+2022-02-23 10:17:52 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:17:54 INFO  TextPresenter:18 - In login page
+2022-02-23 10:17:58 INFO  UserHandler:47 - in get user service layer
+2022-02-23 10:17:58 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-23 10:17:58 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:18:02 INFO  DBAccountHandler:134 -  in getTransfers Dao
+2022-02-23 10:18:02 INFO  TextPresenter:390 - In display transactions Page
+2022-02-23 10:18:02 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 10:18:10 INFO  TextPresenter:18 - In login page
+2022-02-23 10:30:51 INFO  TextPresenter:18 - In login page
+2022-02-23 10:35:49 INFO  TextPresenter:18 - In login page
+2022-02-23 10:35:52 INFO  TextPresenter:87 - In create user Page
+2022-02-23 10:48:24 INFO  TextPresenter:18 - In login page
+2022-02-23 10:48:55 INFO  TextPresenter:18 - In login page
+2022-02-23 11:35:57 INFO  TextPresenter:18 - In login page
+2022-02-23 11:36:04 INFO  TextPresenter:87 - In create user Page
+2022-02-23 11:36:11 INFO  UserHandler:17 - in add User
+2022-02-23 11:36:11 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-23 11:36:11 INFO  DBConnection:23 - Estabilishing DB connection
+2022-02-23 11:36:11 INFO  UserHandler:47 - in get user service layer
+2022-02-23 11:36:11 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-23 11:36:11 INFO  TextPresenter:18 - In login page
+2022-02-23 11:36:18 INFO  TextPresenter:87 - In create user Page
+2022-02-23 11:36:27 INFO  UserHandler:17 - in add User
+2022-02-23 11:36:27 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-23 11:36:27 INFO  UserHandler:47 - in get user service layer
+2022-02-23 11:36:27 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-23 11:36:27 INFO  TextPresenter:18 - In login page
+2022-02-23 11:36:28 INFO  TextPresenter:87 - In create user Page
+2022-02-23 11:36:35 INFO  UserHandler:17 - in add User
+2022-02-23 11:36:35 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-23 11:36:35 INFO  UserHandler:47 - in get user service layer
+2022-02-23 11:36:35 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-23 11:36:35 INFO  TextPresenter:18 - In login page
+2022-02-23 11:36:42 INFO  UserHandler:58 - in get Employee service layer
+2022-02-23 11:36:42 INFO  DBUserHandler:107 - in GetUser Dao Layer
+2022-02-23 11:36:42 INFO  TextPresenter:300 - In employee interface Page
+2022-02-23 11:36:45 INFO  UserHandler:87 - in RegisterCustomers  service layor
+2022-02-23 11:36:45 INFO  DBUserHandler:136 - in Regester Customers Dao Layer
+2022-02-23 11:36:45 INFO  TextPresenter:416 - In customer registration Page
+2022-02-23 11:36:51 INFO  UserHandler:99 - in setRegistratin service layor
+2022-02-23 11:36:51 INFO  DBUserHandler:188 - in Customer Registration Dao Layer
+2022-02-23 11:36:51 INFO  TextPresenter:300 - In employee interface Page
+2022-02-23 11:36:53 INFO  UserHandler:76 - in getCustomers service layer
+2022-02-23 11:36:53 INFO  DBUserHandler:162 - in getCustomers Dao Layer
+2022-02-23 11:36:53 INFO  TextPresenter:461 - In display Page
+2022-02-23 11:36:53 INFO  TextPresenter:300 - In employee interface Page
+2022-02-23 11:36:57 INFO  TextPresenter:18 - In login page
+2022-02-23 11:37:01 INFO  UserHandler:47 - in get user service layer
+2022-02-23 11:37:01 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-23 11:37:01 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:37:04 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 11:37:04 INFO  TextPresenter:356 - In display accounts Page
+2022-02-23 11:37:04 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:37:07 INFO  TextPresenter:159 - In create Bank Account
+2022-02-23 11:37:18 INFO  DBAccountHandler:24 -  in add Account Dao
+2022-02-23 11:37:18 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:37:20 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 11:37:20 INFO  TextPresenter:356 - In display accounts Page
+2022-02-23 11:37:20 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:37:33 INFO  TextPresenter:159 - In create Bank Account
+2022-02-23 11:37:40 INFO  DBAccountHandler:24 -  in add Account Dao
+2022-02-23 11:37:40 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:37:41 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 11:37:41 INFO  TextPresenter:356 - In display accounts Page
+2022-02-23 11:37:41 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:37:44 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 11:37:44 INFO  TextPresenter:237 - In transfer
+2022-02-23 11:38:07 INFO  DBAccountHandler:112 -  in getBalance Dao
+2022-02-23 11:38:07 INFO  DBAccountHandler:98 -  in Transfer Dao
+2022-02-23 11:38:07 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:38:09 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 11:38:09 INFO  TextPresenter:356 - In display accounts Page
+2022-02-23 11:38:09 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:38:18 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 11:38:18 INFO  TextPresenter:237 - In transfer
+2022-02-23 11:38:27 INFO  DBAccountHandler:112 -  in getBalance Dao
+2022-02-23 11:38:27 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:38:30 INFO  DBAccountHandler:134 -  in getTransfers Dao
+2022-02-23 11:38:30 INFO  TextPresenter:390 - In display transactions Page
+2022-02-23 11:38:30 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:38:33 INFO  TextPresenter:18 - In login page
+2022-02-23 11:38:38 INFO  TextPresenter:87 - In create user Page
+2022-02-23 11:38:44 INFO  UserHandler:17 - in add User
+2022-02-23 11:38:44 INFO  DBUserHandler:27 - in add User Dao Layer
+2022-02-23 11:38:44 INFO  UserHandler:47 - in get user service layer
+2022-02-23 11:38:44 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-23 11:38:44 INFO  TextPresenter:18 - In login page
+2022-02-23 11:38:51 INFO  UserHandler:58 - in get Employee service layer
+2022-02-23 11:38:51 INFO  DBUserHandler:107 - in GetUser Dao Layer
+2022-02-23 11:38:51 INFO  TextPresenter:300 - In employee interface Page
+2022-02-23 11:38:52 INFO  UserHandler:87 - in RegisterCustomers  service layor
+2022-02-23 11:38:52 INFO  DBUserHandler:136 - in Regester Customers Dao Layer
+2022-02-23 11:38:52 INFO  TextPresenter:416 - In customer registration Page
+2022-02-23 11:38:55 INFO  UserHandler:99 - in setRegistratin service layor
+2022-02-23 11:38:55 INFO  DBUserHandler:188 - in Customer Registration Dao Layer
+2022-02-23 11:38:55 INFO  TextPresenter:300 - In employee interface Page
+2022-02-23 11:39:00 INFO  TextPresenter:18 - In login page
+2022-02-23 11:39:04 INFO  UserHandler:47 - in get user service layer
+2022-02-23 11:39:04 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-23 11:39:04 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:39:07 INFO  TextPresenter:159 - In create Bank Account
+2022-02-23 11:39:13 INFO  DBAccountHandler:24 -  in add Account Dao
+2022-02-23 11:39:13 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:39:18 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 11:39:18 INFO  TextPresenter:237 - In transfer
+2022-02-23 11:39:34 INFO  DBAccountHandler:112 -  in getBalance Dao
+2022-02-23 11:39:34 INFO  DBAccountHandler:98 -  in Transfer Dao
+2022-02-23 11:39:34 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:39:36 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 11:39:36 INFO  TextPresenter:237 - In transfer
+2022-02-23 11:39:39 INFO  DBAccountHandler:112 -  in getBalance Dao
+2022-02-23 11:39:39 INFO  DBAccountHandler:98 -  in Transfer Dao
+2022-02-23 11:39:39 WARN  AccountHandler:93 - Transfer Failed ERROR: null value in column "targetID" of relation "Transactions" violates not-null constraint
+  Detail: Failing row contains (3, null, 3, 2, 2022-02-23).
+  Where: SQL function "addtransaction" statement 3
+2022-02-23 11:39:39 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:39:42 INFO  DBAccountHandler:134 -  in getTransfers Dao
+2022-02-23 11:39:42 INFO  TextPresenter:390 - In display transactions Page
+2022-02-23 11:39:42 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:39:43 INFO  DBAccountHandler:70 -  in getAccounts Service Layer
+2022-02-23 11:39:43 INFO  TextPresenter:356 - In display accounts Page
+2022-02-23 11:39:43 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:39:45 INFO  TextPresenter:18 - In login page
+2022-02-23 11:39:48 INFO  UserHandler:47 - in get user service layer
+2022-02-23 11:39:48 INFO  DBUserHandler:76 - in GetUser Dao Layer
+2022-02-23 11:39:48 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:39:51 INFO  DBAccountHandler:134 -  in getTransfers Dao
+2022-02-23 11:39:51 INFO  TextPresenter:390 - In display transactions Page
+2022-02-23 11:39:51 INFO  TextPresenter:115 - In customer interface Page
+2022-02-23 11:40:16 INFO  TextPresenter:18 - In login page
